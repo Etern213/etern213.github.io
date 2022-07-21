@@ -315,12 +315,12 @@ i {
 }
 @font-face {
 	font-family:FZAY1;
-    src:url(./fonts/FZAY.ttf) format("truetype")
+    src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY.ttf) format("truetype")
 }
 /*
 @font-face {
-	font-family:FZAY2;
-    src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY.ttf) format("truetype")
+	font-family:FZAY1;
+    src:url(./fonts/FZAY.ttf) format("truetype")
 }
 @font-face {
 	font-family:FZAY3;
