@@ -595,7 +595,7 @@ body {
     font-family:Microsoft YaHei;
 	font-weight:bold;
 	min-height:150px;
-	margin-left:-12px;
+	margin-left:0px;
 	text-align:center;
 	display:-webkit-box;
 	-webkit-box-pack:center;
