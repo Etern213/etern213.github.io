@@ -601,6 +601,22 @@ body {
 	-webkit-box-pack:center;
 	-webkit-box-align:center
 }
+/*
+.header-menu {
+	width:200px;
+	font-size:12px;
+	position:relative;
+	left: 10%;
+	margin: auto;
+	color:#FFFFFF;
+	text-align:center;
+	display:block;
+	padding:5px 0 5px;
+	background:#08dbd4;
+	border-radius:5px; 
+	box-shadow:1px 1px #1A6EA0;
+}
+*/
 .left-col #header .header-menu li {
 	cursor:default
 }
@@ -612,7 +628,7 @@ body {
 	font-size:12px;
 	margin-bottom:10px;
     font-family:Microsoft YaHei;
-	margin-top:10px
+	margin-top:30px
 }
 .left-col #header .header-smart-menu a:after {
 	content:"/"
