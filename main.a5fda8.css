@@ -2040,10 +2040,10 @@ to {
 	border-radius:3px
 }
 .declare {
-	background-color:#eaeaea;
+	background-color:#ffffff;
 	margin-top:.5em;
-	border-left:3px solid #ff1700;
-	padding:.5em 1em
+	border-left:3.5px solid #00f7ff;
+	padding:.1em 1em
 }
 .hover-reveal {
 	position:fixed;
