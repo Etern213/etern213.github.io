@@ -678,8 +678,9 @@ body {
 .left-col #header .header-author {
 	text-align:center;
 	margin:0 0;
+	letter-spacing:2px;
 	font-family:Abella,Times New Roman;
-	font-size:53px;
+	font-size:47px;
 	transition:.3s
 }
 ::-webkit-scrollbar {
