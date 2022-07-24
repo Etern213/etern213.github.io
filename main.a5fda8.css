@@ -321,6 +321,10 @@ i {
 	font-family:FZAY100;
     src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.0.ttf) format("truetype")
 }
+@font-face {
+	font-family:Abella;
+    src:url(./fonts/Abella.ttf) format("truetype")
+}
 /*
 @font-face {
 	font-family:FZAY1;
@@ -673,9 +677,9 @@ body {
 }
 .left-col #header .header-author {
 	text-align:center;
-	margin:.67em 0;
-	font-family:Roboto,serif;
-	font-size:30px;
+	margin:0 0;
+	font-family:Abella,Times New Roman;
+	font-size:53px;
 	transition:.3s
 }
 ::-webkit-scrollbar {
