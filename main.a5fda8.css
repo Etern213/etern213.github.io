@@ -318,8 +318,8 @@ i {
     src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.4.ttf) format("truetype")
 }
 @font-face {
-	font-family:FZAY102;
-    src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.2.ttf) format("truetype")
+	font-family:FZAY105;
+    src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.5.ttf) format("truetype")
 }
 @font-face {
 	font-family:FZAY103;
@@ -502,7 +502,7 @@ i {
 }
 body,button,input,select,textarea {
 	color:#1a1a1a;
-	font-family:FZAY104,FZAY103,FZAY102,lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+	font-family:FZAY105,FZAY104,FZAY103,lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
 	font-size:20px;
 	font-size:1.1rem;
 	line-height:1.75
