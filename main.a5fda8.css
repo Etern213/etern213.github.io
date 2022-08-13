@@ -313,14 +313,14 @@ i {
 	src:url(./fonts/fonteditor.86c132.eot);
 	src:url(./fonts/fonteditor.86c132.eot?#iefix) format("embedded-opentype"),url(./fonts/fonteditor.bbc4b5.woff2) format("woff2"),url(./fonts/fonteditor.3da1ef.woff) format("woff"),url(./fonts/fonteditor.fe4d8a.ttf) format("truetype"),url(./fonts/fonteditor.3e0d4a.svg#uxfonteditor) format("svg")
 }
-/* 506 830 */
+/* 506 830 1775 */
 @font-face {
 	font-family:FZAY107;
     src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.7.ttf) format("truetype")
 }
 @font-face {
-	font-family:FZAY105;
-    src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.5.ttf) format("truetype")
+	font-family:FZAY108;
+    src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.8.ttf) format("truetype")
 }
 @font-face {
 	font-family:FZAY106;
@@ -501,9 +501,10 @@ i {
 .icon-blog:before {
 	content:"\E8A1"
 }
+/* 316 */
 body,button,input,select,textarea {
 	color:#1a1a1a;
-	font-family:FZAY107,FZAY106,FZAY105,lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+	font-family:FZAY108,FZAY107,FZAY106,lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
 	font-size:20px;
 	font-size:1.1rem;
 	line-height:1.75
@@ -826,8 +827,9 @@ body {
 .article-entry .highlight .gutter pre .line {
 	text-shadow:none
 }
+/* 316 */
 .article-entry .highlight .line {
-	font-family: Cascadia Code,FZAY107;
+	font-family: Cascadia Code,FZAY108;
 	font-weight: 400;
 	color:#1a1a1a;
 	text-shadow: 1px 1px #ffffff;
@@ -1768,12 +1770,16 @@ to {
 	padding-right:7.6923%;
 	padding-left:7.6923%
 }
+/* 316 */
 .article-entry li code,.article-entry p code {
 	padding:1px 3px;
 	margin:0 3px;
-	background:#ddd;
-	border:1px solid #ccc;
-	font-family:Menlo,Monaco,Andale Mono,lucida console,Courier New,monospace;
+	background:#eaebeb;
+	font-family: Cascadia Code,FZAY108;
+	font-weight: 400;
+	color:#1a1a1a;
+	text-shadow: 1px 1px #ffffff;
+	min-height:19px;
 	word-wrap:break-word;
 	font-size:14px
 }

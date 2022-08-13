@@ -6,13 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://etern213.github.io">
-  <title>Image Super-Resolution Using Very Deep Residual Channel Attention Networks | Fantastic World</title>
+  <title>论文阅读：Image Super-Resolution Using Very Deep Residual Channel Attention Networks | Fantastic World</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta name="description" content="一、论文背景及创新点首先是论文下载地址，以及作者提供的源码GitHub仓库 在论文中，作者注意到以下两个事实：(1) 卷积神经网络的深度是决定超分性能的关键因素，但较深的网络很难训练。(2) 低分辨率的输入和特征包含丰富的低频信息，这些信息在各个通道间被同等对待是不合理的，从而阻碍了CNN的表达能力 这里说一下低频信息的概念，低频信息指的是图像缓慢变化的部分。通俗讲，图像中边缘部分变化较大，称为高">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Image Super-Resolution Using Very Deep Residual Channel Attention Networks">
+<meta property="og:title" content="论文阅读：Image Super-Resolution Using Very Deep Residual Channel Attention Networks">
 <meta property="og:url" content="https://etern213.github.io/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/index.html">
 <meta property="og:site_name" content="Fantastic World">
 <meta property="og:description" content="一、论文背景及创新点首先是论文下载地址，以及作者提供的源码GitHub仓库 在论文中，作者注意到以下两个事实：(1) 卷积神经网络的深度是决定超分性能的关键因素，但较深的网络很难训练。(2) 低分辨率的输入和特征包含丰富的低频信息，这些信息在各个通道间被同等对待是不合理的，从而阻碍了CNN的表达能力 这里说一下低频信息的概念，低频信息指的是图像缓慢变化的部分。通俗讲，图像中边缘部分变化较大，称为高">
@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://s2.loli.net/2022/08/13/A67nOjWbIGYZTks.png">
 <meta property="og:image" content="https://s2.loli.net/2022/08/13/FbrL15if7DtHGUI.png">
 <meta property="article:published_time" content="2022-08-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-13T04:50:44.531Z">
+<meta property="article:modified_time" content="2022-08-13T23:18:07.632Z">
 <meta property="article:author" content="Fantastic World">
 <meta property="article:tag" content="超分">
 <meta property="article:tag" content="注意力网络">
@@ -39,7 +39,7 @@
   
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
   
-  <link rel="stylesheet" type="text/css" href="/./main.a5fda8.css?v=1.0.7">
+  <link rel="stylesheet" type="text/css" href="/./main.a5fda8.css?v=1.0.8">
   <style type="text/css">
     
     #container.show {
@@ -196,7 +196,7 @@
   
   
     <h1 class="article-title" itemprop="name">
-      Image Super-Resolution Using Very Deep Residual Channel Attention Networks
+      论文阅读：Image Super-Resolution Using Very Deep Residual Channel Attention Networks
     </h1>
   
 
@@ -322,7 +322,7 @@
 <p>所以为了复现论文结果或者统一标准，建议还是跑出结果后去matlab进行相关PSNR的计算，作者在源码中也给了相应的matlab文件。</p>
 <p>如果非要在推理过程中显示PSNR的话也不是没有办法。我们看&quot;RCAN_TestCode/code/data/myimage.py&quot;文件第46行内容：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> common.np2Tensor([lr], self.args.rgb_range)[<span class="number">0</span>], <span class="number">-1</span>, filename</span><br></pre></td></tr></table></figure>
-<p>对比其他py文件相对应部分可以发现，这里retrun的三个东西分别是LR、HR和文件名，而推理环节压根就没有传入HR图像，传入的是-1作为占位符。<br>所以要想计算PSNR，我们要将HR图像传入。修改后的<strong>getitem</strong>函数如下</p>
+<p>对比其他py文件相对应部分可以发现，这里return的三个东西分别是LR、HR和文件名，而推理环节压根就没有传入HR图像，传入的是-1作为占位符。<br>所以要想计算PSNR，我们要将HR图像传入。修改后的<strong>getitem</strong>函数如下</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, idx)</span>:</span></span><br><span class="line">    filename = os.path.split(self.filelist_lr[idx])[<span class="number">-1</span>]</span><br><span class="line">    filename, _ = os.path.splitext(filename)</span><br><span class="line">    <span class="comment">#lr = misc.imread(self.filelist[idx])</span></span><br><span class="line">    lr = imageio.imread(self.filelist_lr[idx])</span><br><span class="line">    lr = common.set_channel([lr], self.args.n_colors)[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        hr = imageio.imread(self.filelist_hr[idx])</span><br><span class="line">        hr = common.set_channel([hr], self.args.n_colors)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">return</span> common.np2Tensor([lr], self.args.rgb_range)[<span class="number">0</span>], common.np2Tensor([hr], self.args.rgb_range)[<span class="number">0</span>], filename</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> common.np2Tensor([lr], self.args.rgb_range)[<span class="number">0</span>], <span class="number">-1</span>, filename</span><br></pre></td></tr></table></figure>
 <p>即将原本options.py里的<font color=MediumPurple>&#39;--testpath&#39;</font>分成两部分，<font color=MediumPurple>&#39;--testpath_lr&#39;</font>和<font color=MediumPurple>&#39;--testpath_hr&#39;</font>然后用上面这段代码重新定义<strong>getitem</strong>函数。return的时候将HR图像一起送入dataloader。</p>
 <p>当然，把<font color=MediumPurple>&#39;--testpath&#39;</font>分成两部分后，其他地方涉及到<font color=MediumPurple>&#39;--testpath&#39;</font>的也要相应改成<font color=MediumPurple>&#39;--testpath_lr&#39;</font>，比如<strong>getitem</strong>下面的<strong>len</strong>函数就要修改。<br>其余地方这里就不再一一列举了，如果实在找不到可以尝试跑一跑看报错内容然后反过来再去定位。</p>
@@ -353,18 +353,18 @@
       <ul class="post-copyright">
         
           <li>
-            由<font color=MediumPurple face=FZAY107> Etern </font>发表于<font color=MediumPurple face=FZAY107> 2022-08-13 </font>，添加 			
+            由<font color=MediumPurple face=FZAY108> Etern </font>发表于<font color=MediumPurple face=FZAY108> 2022-08-13 </font>，添加 			
             
-              <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)"><i class="icon-price-tags icon" style="color:MediumPurple"></i><font size=3 face=FZAY107 color=MediumPurple> 超分</font></a> 
+              <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)"><i class="icon-price-tags icon" style="color:MediumPurple"></i><font size=3 face=FZAY108 color=MediumPurple> 超分</font></a> 
             
-              <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)"><i class="icon-price-tags icon" style="color:MediumPurple"></i><font size=3 face=FZAY107 color=MediumPurple> 注意力网络</font></a> 
+              <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)"><i class="icon-price-tags icon" style="color:MediumPurple"></i><font size=3 face=FZAY108 color=MediumPurple> 注意力网络</font></a> 
             
-            标签，归类于 <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)"><i class="icon-book icon" style="color:MediumPurple"></i><font size=3 face=FZAY107 color=MediumPurple> CV实践及论文阅读</font></a> 
+            标签，归类于 <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)"><i class="icon-book icon" style="color:MediumPurple"></i><font size=3 face=FZAY108 color=MediumPurple> CV实践及论文阅读</font></a> 
           </li>
         
         <li>
           <strong>本文链接：</strong>
-          <a href="https://etern213.github.io/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/" title="Image Super-Resolution Using Very Deep Residual Channel Attention Networks" target="_blank">https://etern213.github.io/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/</a>
+          <a href="https://etern213.github.io/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/" title="论文阅读：Image Super-Resolution Using Very Deep Residual Channel Attention Networks" target="_blank">https://etern213.github.io/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/</a>
         </li>
         
         <li>
