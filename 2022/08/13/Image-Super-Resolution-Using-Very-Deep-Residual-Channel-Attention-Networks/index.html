@@ -17,19 +17,19 @@
 <meta property="og:site_name" content="Fantastic World">
 <meta property="og:description" content="一、论文背景及创新点首先是论文下载地址，以及作者提供的源码GitHub仓库 在论文中，作者注意到以下两个事实：(1) 卷积神经网络的深度是决定超分性能的关键因素，但较深的网络很难训练。(2) 低分辨率的输入和特征包含丰富的低频信息，这些信息在各个通道间被同等对待是不合理的，从而阻碍了CNN的表达能力 这里说一下低频信息的概念，低频信息指的是图像缓慢变化的部分。通俗讲，图像中边缘部分变化较大，称为高">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://sm.ms/image/8vJVc32rhFTDUXK">
-<meta property="og:image" content="https://sm.ms/image/A73soXv9HIaDkWK">
-<meta property="og:image" content="https://sm.ms/image/ZjfFhKTgz4n6RpV">
-<meta property="og:image" content="https://sm.ms/image/1LsDiXSITyMbZ3f">
-<meta property="og:image" content="https://sm.ms/image/A67nOjWbIGYZTks">
-<meta property="og:image" content="https://sm.ms/image/FbrL15if7DtHGUI">
+<meta property="og:image" content="https://s2.loli.net/2022/08/13/8vJVc32rhFTDUXK.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/13/A73soXv9HIaDkWK.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/13/ZjfFhKTgz4n6RpV.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/13/1LsDiXSITyMbZ3f.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/13/A67nOjWbIGYZTks.png">
+<meta property="og:image" content="https://s2.loli.net/2022/08/13/FbrL15if7DtHGUI.png">
 <meta property="article:published_time" content="2022-08-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-13T03:55:22.292Z">
+<meta property="article:modified_time" content="2022-08-13T04:35:10.794Z">
 <meta property="article:author" content="Fantastic World">
 <meta property="article:tag" content="超分">
 <meta property="article:tag" content="注意力网络">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://sm.ms/image/8vJVc32rhFTDUXK">
+<meta name="twitter:image" content="https://s2.loli.net/2022/08/13/8vJVc32rhFTDUXK.png">
   
     <link rel="alternative" href="/atom.xml" title="Fantastic World" type="application/atom+xml">
   
@@ -251,20 +251,20 @@
 <p>于是作者提出了一种非常深的<font color=MediumPurple>&quot;RCAN&quot;</font>网络，用于超分问题，网络中比较值得关注的部分有两个：<br><font color=HotPink>(1)</font> 提出了RIR(residual in residual)结构，用来构建非常深的能有效训练的网络。<br><font color=HotPink>(2)</font> 提出了一种注意力机制(CA)，通过考虑通道间的相互依赖关系，自适应地重新调整通道特征。</p>
 <a id="more"></a>  
 <div>
-<img src="https://sm.ms/image/8vJVc32rhFTDUXK">
+<img src="https://s2.loli.net/2022/08/13/8vJVc32rhFTDUXK.png">
 <center><font face="Microsoft YaHei" size=2 color="grey">各超分模型效果示意图</font></center>
 </div>
 
 <h2 id="二、网络结构"><a href="#二、网络结构" class="headerlink" title="二、网络结构"></a>二、网络结构</h2><h3 id="1、整体结构"><a href="#1、整体结构" class="headerlink" title="1、整体结构"></a>1、整体结构</h3><p>在介绍RCAN的网络结构之前，我们整体审视一下深度学习在超分领域的源头——SRCNN网络 </p>
 <div>
-<img src="https://sm.ms/image/A73soXv9HIaDkWK">
+<img src="https://s2.loli.net/2022/08/13/A73soXv9HIaDkWK.png">
 <center><font face="Microsoft YaHei" size=2 color="grey">SRCNN网络结构</font></center>
 </div>
 
 <p>SRCNN网络是首先将深度学习体系应用到超分领域的一片论文。其思路非常简洁朴素，首先使用双三次插值方法将LR(低分辨率图像)放大到需要的尺寸，然后通过三个卷积层，最后得到超分后的图像SR</p>
 <p>然后我们来看RCAN的网络结构 </p>
 <div>
-<img src="https://sm.ms/image/ZjfFhKTgz4n6RpV">
+<img src="https://s2.loli.net/2022/08/13/ZjfFhKTgz4n6RpV.png">
 <center><font face="Microsoft YaHei" size=2 color="grey">RCAN网络结构</font></center>
 </div>
 
@@ -277,7 +277,7 @@
 <h3 id="2、注意力模块"><a href="#2、注意力模块" class="headerlink" title="2、注意力模块"></a>2、注意力模块</h3><p>上面介绍了RCAN网络的整体结构。第一部分说了RCAN网络两大创新点，一个是RIR结构，一个是注意力模块。这里讲一下RCAN网络的注意力模块。</p>
 <p>在此之前，我们先来看另一个网络——SE-Net  </p>
 <div>
-<img src="https://sm.ms/image/1LsDiXSITyMbZ3f">
+<img src="https://s2.loli.net/2022/08/13/1LsDiXSITyMbZ3f.png">
 <center><font face="Microsoft YaHei" size=2 color="grey">SE-Net通道注意力模块</font></center>
 </div>
 
@@ -286,7 +286,7 @@
 <p><font color=HotPink>(2)</font> 经过一个r倍的下采样、ReLU函数激活<br><font color=HotPink>(3)</font> 经过一个r倍的上采样、Sigmoid函数激活<br><font color=HotPink>(4)</font> 将得到的$1 \times 1 \times C$结果与输入注意力网络前的$H \times W \times C$矩阵做乘积，这就是通道权重。</p>
 <p>然后回到RCAN网络，我们可以看到RCAN网络中使用的注意力模块其实就是SE-Net中涉及到的通道注意力方法。所以，RCAN论文所做的贡献其实大体可以概括为<font color=MediumPurple>&quot;将其他领域表现较好的注意力方法引入到了超分领域，进行了一系列的有机结合&quot;</font>  </p>
 <div>
-<img src="https://sm.ms/image/A67nOjWbIGYZTks">
+<img src="https://s2.loli.net/2022/08/13/A67nOjWbIGYZTks.png">
 <center><font face="Microsoft YaHei" size=2 color="grey">RCAN网络中的注意力模块</font></center>
 </div>
 
@@ -335,7 +335,7 @@
 
 <h2 id="五、对比与总结"><a href="#五、对比与总结" class="headerlink" title="五、对比与总结"></a>五、对比与总结</h2><h3 id="RCAN的优势"><a href="#RCAN的优势" class="headerlink" title="RCAN的优势"></a>RCAN的优势</h3><p>我们先看这么一张有意思的结果图，这张图片来源于论文，作者并未着重强调但是这个结果展示的内容十分有意思： </p>
 <div>
-<img src="https://sm.ms/image/FbrL15if7DtHGUI">
+<img src="https://s2.loli.net/2022/08/13/FbrL15if7DtHGUI.png">
 <center><font face="Microsoft YaHei" size=2 color="grey">Urban100数据集img_040</font></center>
 </div>
 
