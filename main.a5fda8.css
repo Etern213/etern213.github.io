@@ -188,7 +188,7 @@ pre {
 	word-wrap:break-word
 }
 code,kbd,pre,samp {
-	font-family:monospace,monospace;
+	font-family:monospace;
 	font-size:1em
 }
 button,input,optgroup,select,textarea {
@@ -313,9 +313,10 @@ i {
 	src:url(./fonts/fonteditor.86c132.eot);
 	src:url(./fonts/fonteditor.86c132.eot?#iefix) format("embedded-opentype"),url(./fonts/fonteditor.bbc4b5.woff2) format("woff2"),url(./fonts/fonteditor.3da1ef.woff) format("woff"),url(./fonts/fonteditor.fe4d8a.ttf) format("truetype"),url(./fonts/fonteditor.3e0d4a.svg#uxfonteditor) format("svg")
 }
+/* 506 830 */
 @font-face {
-	font-family:FZAY104;
-    src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.4.ttf) format("truetype")
+	font-family:FZAY107;
+    src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.7.ttf) format("truetype")
 }
 @font-face {
 	font-family:FZAY105;
@@ -502,7 +503,7 @@ i {
 }
 body,button,input,select,textarea {
 	color:#1a1a1a;
-	font-family:FZAY106,FZAY105,FZAY104,lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+	font-family:FZAY107,FZAY106,FZAY105,lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
 	font-size:20px;
 	font-size:1.1rem;
 	line-height:1.75
@@ -739,25 +740,25 @@ body {
 	background:url(./img/scrollbar_arrow.png) no-repeat -30px -18px
 }
 .article-entry .highlight,.article-entry pre {
-	background:#1a0139;
+	background:#f3f4f5;
 	margin:10px 0;
 	padding:10px;
 	overflow:hidden;
 	overflow-x:auto;
 	color:#fff;
 	font-size:.9em;
-	line-height:22.400000000000002px
+	line-height:22.4px
 }
 .article-entry .highlight::-webkit-scrollbar,.article-entry pre::-webkit-scrollbar {
 	height:10px;
 	width:7px;
-	background:rgba(0,0,0,.1)
+	background:rgb(255, 255, 255)
 }
 .article-entry .highlight::-webkit-scrollbar:hover,.article-entry pre::-webkit-scrollbar:hover {
-	background:rgba(0,0,0,.2)
+	background:rgb(255, 255, 255)
 }
 .article-entry .highlight::-webkit-scrollbar-thumb,.article-entry pre::-webkit-scrollbar-thumb {
-	background:rgba(0,0,0,.3);
+	background:rgb(255, 255, 255);
 	border-radius:6px
 }
 .article-entry .highlight::-webkit-scrollbar-thumb:hover,.article-entry pre::-webkit-scrollbar-thumb:hover {
@@ -771,21 +772,21 @@ body {
 	border-radius:10px
 }
 .article-entry .gist .gist-file .gist-data .line-numbers,.article-entry .highlight .gutter pre,.article-entry .highlight .gutter pre .line {
-	color:#fc0000
+	color:#626060
 }
 .article-entry code,.article-entry pre {
 	font-family:Source Code Pro,Consolas,Monaco,Menlo,monospace
 }
 .article-entry code {
 	background:#eee;
-	padding:0 .3em;
+	padding:0.3em;
 	border:none
 }
 .article-entry pre code {
 	background:none;
 	text-shadow:none;
 	padding:0;
-	color:#fff
+	color:rgb(255, 255, 255)
 }
 .article-entry .highlight {
 	border-radius:4px
@@ -826,7 +827,10 @@ body {
 	text-shadow:none
 }
 .article-entry .highlight .line {
-	color:#fff;
+	font-family: Cascadia Code,FZAY107;
+	font-weight: 400;
+	color:#1a1a1a;
+	text-shadow: 1px 1px #ffffff;
 	min-height:19px
 }
 .article-entry .gist {
@@ -860,7 +864,7 @@ body {
 	border:none
 }
 .article-entry .gist .gist-file .gist-meta {
-	background:#272822;
+	background:#282222;
 	color:highlight-comment;
 	font:.85em Helvetica Neue,Helvetica,Arial,sans-serif;
 	text-shadow:0 0;
@@ -876,22 +880,22 @@ body {
 	text-decoration:underline
 }
 pre .comment {
-	color:#ffd300
+	color:#79af60
 }
-pre .class .params,pre .function .keyword,pre .keyword {
-	color:#66d9ef
+pre .function .keyword,pre .keyword {
+	color:#003ffd
 }
 pre .css .value,pre .doctype,pre .function,pre .params,pre .tag {
-	color:#fff
+	color:rgb(0, 208, 255)
 }
-pre .at_rule,pre .at_rule .keyword,pre .css~* .tag,pre .preprocessor,pre .preprocessor .keyword,pre .title {
-	color:#f92672
+pre .class .params,pre .at_rule,pre .at_rule .keyword,pre .css~* .tag,pre .preprocessor,pre .preprocessor .keyword,pre .title {
+	color:#2bd6c5
 }
 pre .attribute,pre .built_in,pre .class,pre .css~* .class,pre .function .title {
-	color:#a6e22e
+	color:#b8c200
 }
 pre .string,pre .value {
-	color:#e6db74
+	color:#ac6e58
 }
 pre .number {
 	color:#7163d7

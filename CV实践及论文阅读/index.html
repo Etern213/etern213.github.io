@@ -6,13 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://etern213.github.io">
-  <title>Archives | Fantastic World</title>
+  <title>Fantastic World</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <meta property="og:type" content="website">
 <meta property="og:title" content="Fantastic World">
-<meta property="og:url" content="https://etern213.github.io/archives/page/2/index.html">
+<meta property="og:url" content="https://etern213.github.io/CV%E5%AE%9E%E8%B7%B5%E5%8F%8A%E8%AE%BA%E6%96%87%E9%98%85%E8%AF%BB/index.html">
 <meta property="og:site_name" content="Fantastic World">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="Fantastic World">
@@ -178,292 +178,106 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/13/%E9%BC%A0%E6%A0%87%E5%92%8C%E8%BF%9E%E5%87%BB%E7%BB%83%E4%B9%A0V1.16/" class="archive-article-date">
-        <time datetime="2020-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
-</a>
-
-        </div>
-    	 
   
     <h1 itemprop="name">
 	
-	  <a class="archive-article-title" href="/2020/07/13/%E9%BC%A0%E6%A0%87%E5%92%8C%E8%BF%9E%E5%87%BB%E7%BB%83%E4%B9%A0V1.16/">鼠标和连击练习V1.16</a>
+	  <a class="article-title" href="/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/">Image Super-Resolution Using Very Deep Residual Channel Attention Networks</a>
 	
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">自制地图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/test1/" class="article-tag-list-link color6">test1</a>  <!-- categories/test1/ -->
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/06/18/%E5%BD%95%E5%83%8F%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7WC3%20Replay%20Tool/" class="archive-article-date">
-        <time datetime="2020-06-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-18</time>
+  
+<a href="/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/" class="archive-article-date">
+        <time datetime="2022-08-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-13</time>
 </a>
 
-        </div>
-    	 
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/06/18/%E5%BD%95%E5%83%8F%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7WC3%20Replay%20Tool/">录像分析工具WC3 Replay Tool</a>
-	
-    </h1>
   
+    
 
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="一、论文背景及创新点"><a href="#一、论文背景及创新点" class="headerlink" title="一、论文背景及创新点"></a>一、论文背景及创新点</h2><p>首先是<a href="https://arxiv.org/abs/1807.02758" target="_blank" rel="noopener">论文下载地址</a>，以及作者提供的源码<a href="https://github.com/yulunzhang/RCAN" target="_blank" rel="noopener">GitHub仓库</a></p>
+<p>在论文中，作者注意到以下两个事实：<br><font color=HotPink>(1)</font> 卷积神经网络的深度是决定超分性能的关键因素，但较深的网络很难训练。<br><font color=HotPink>(2)</font> 低分辨率的输入和特征包含丰富的低频信息，这些信息在各个通道间被同等对待是不合理的，从而阻碍了CNN的表达能力</p>
+<p>这里说一下低频信息的概念，低频信息指的是图像缓慢变化的部分。通俗讲，图像中边缘部分变化较大，称为高频信息。而边缘以内的部分缓慢变化，就称作低频信息。</p>
+<p>于是作者提出了一种非常深的<font color=MediumPurple>&quot;RCAN&quot;</font>网络，用于超分问题，网络中比较值得关注的部分有两个：<br><font color=HotPink>(1)</font> 提出了RIR(residual in residual)结构，用来构建非常深的能有效训练的网络。<br><font color=HotPink>(2)</font> 提出了一种注意力机制(CA)，通过考虑通道间的相互依赖关系，自适应地重新调整通道特征。</p>
+    
+    <a class="article-more-a" href="/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/#more">阅读更多 >></a>
+    
+    
 
-        <div class="article-info info-on-right">
-          
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">War3小工具</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">超分</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">注意力网络</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/test1/" class="article-tag-list-link color6">test1</a>  <!-- categories/test1/ -->
+        			<a href="/CV实践及论文阅读/" class="article-tag-list-link color6">CV实践及论文阅读</a>  <!-- categories/CV实践及论文阅读/ -->
         		</li>
       		
 		</ul>
 	</div>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/05/03/%E5%9B%A2%E6%88%98%E8%AE%AD%E7%BB%83%E9%87%8D%E7%BD%AE%E7%89%88V1.37/" class="archive-article-date">
-        <time datetime="2020-05-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
-</a>
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
+
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/05/03/%E5%9B%A2%E6%88%98%E8%AE%AD%E7%BB%83%E9%87%8D%E7%BD%AE%E7%89%88V1.37/">团战训练重置版V1.37</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">自制地图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/test1/" class="article-tag-list-link color6">test1</a>  <!-- categories/test1/ -->
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/05/03/%E8%81%8A%E5%A4%A9%E9%A2%91%E9%81%93%E3%80%81%E8%81%8A%E5%A4%A9%E6%A0%8F%E4%BB%A5%E5%8F%8A%E4%B8%80%E4%BA%9B%E6%8C%87%E4%BB%A4%E7%9A%84%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
-        <time datetime="2020-05-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/05/03/%E8%81%8A%E5%A4%A9%E9%A2%91%E9%81%93%E3%80%81%E8%81%8A%E5%A4%A9%E6%A0%8F%E4%BB%A5%E5%8F%8A%E4%B8%80%E4%BA%9B%E6%8C%87%E4%BB%A4%E7%9A%84%E4%BB%8B%E7%BB%8D/">魔兽争霸3聊天频道、聊天栏以及一些指令的介绍</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">War3小技巧</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/test1/" class="article-tag-list-link color6">test1</a>  <!-- categories/test1/ -->
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/17/Warcraft%20III1.32%E7%89%88%E6%9C%AC%E4%BF%AE%E6%94%B9%E5%AD%97%E4%BD%93%E6%96%B9%E6%B3%95/" class="archive-article-date">
-        <time datetime="2020-04-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/04/17/Warcraft%20III1.32%E7%89%88%E6%9C%AC%E4%BF%AE%E6%94%B9%E5%AD%97%E4%BD%93%E6%96%B9%E6%B3%95/">Warcraft III1.32版本修改字体方法</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">War3小技巧</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/test1/" class="article-tag-list-link color6">test1</a>  <!-- categories/test1/ -->
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">« Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
   
 
 
@@ -510,7 +324,7 @@
 		mathjax: true,
 		isHome: false,
 		isPost: false,
-		isArchive: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

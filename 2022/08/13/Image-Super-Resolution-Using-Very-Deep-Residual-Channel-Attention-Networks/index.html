@@ -6,17 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://etern213.github.io">
-  <title>Archives | Fantastic World</title>
+  <title>Image Super-Resolution Using Very Deep Residual Channel Attention Networks | Fantastic World</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Fantastic World">
-<meta property="og:url" content="https://etern213.github.io/archives/page/2/index.html">
+  <meta name="description" content="一、论文背景及创新点首先是论文下载地址，以及作者提供的源码GitHub仓库 在论文中，作者注意到以下两个事实：(1) 卷积神经网络的深度是决定超分性能的关键因素，但较深的网络很难训练。(2) 低分辨率的输入和特征包含丰富的低频信息，这些信息在各个通道间被同等对待是不合理的，从而阻碍了CNN的表达能力 这里说一下低频信息的概念，低频信息指的是图像缓慢变化的部分。通俗讲，图像中边缘部分变化较大，称为高">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Image Super-Resolution Using Very Deep Residual Channel Attention Networks">
+<meta property="og:url" content="https://etern213.github.io/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/index.html">
 <meta property="og:site_name" content="Fantastic World">
+<meta property="og:description" content="一、论文背景及创新点首先是论文下载地址，以及作者提供的源码GitHub仓库 在论文中，作者注意到以下两个事实：(1) 卷积神经网络的深度是决定超分性能的关键因素，但较深的网络很难训练。(2) 低分辨率的输入和特征包含丰富的低频信息，这些信息在各个通道间被同等对待是不合理的，从而阻碍了CNN的表达能力 这里说一下低频信息的概念，低频信息指的是图像缓慢变化的部分。通俗讲，图像中边缘部分变化较大，称为高">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://sm.ms/image/8vJVc32rhFTDUXK">
+<meta property="og:image" content="https://sm.ms/image/A73soXv9HIaDkWK">
+<meta property="og:image" content="https://sm.ms/image/ZjfFhKTgz4n6RpV">
+<meta property="og:image" content="https://sm.ms/image/1LsDiXSITyMbZ3f">
+<meta property="og:image" content="https://sm.ms/image/A67nOjWbIGYZTks">
+<meta property="og:image" content="https://sm.ms/image/FbrL15if7DtHGUI">
+<meta property="article:published_time" content="2022-08-12T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-13T03:55:22.292Z">
 <meta property="article:author" content="Fantastic World">
+<meta property="article:tag" content="超分">
+<meta property="article:tag" content="注意力网络">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://sm.ms/image/8vJVc32rhFTDUXK">
   
     <link rel="alternative" href="/atom.xml" title="Fantastic World" type="application/atom+xml">
   
@@ -176,294 +189,343 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
+            <article id="post-Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 class="article-title" itemprop="name">
+      Image Super-Resolution Using Very Deep Residual Channel Attention Networks
+    </h1>
+  
+
+
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+        
+        <meta name="referrer" content="no-referrer-when-downgrade" />
+
+<a href="/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/" class="archive-article-date">
+        <time datetime="2022-08-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-13</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">4.9k字</span>
+    </span>
+  </span>
+<!--
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">19分</span>
+    </span>
+  </span>
+</div>
+-->
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="一、论文背景及创新点"><a href="#一、论文背景及创新点" class="headerlink" title="一、论文背景及创新点"></a>一、论文背景及创新点</h2><p>首先是<a href="https://arxiv.org/abs/1807.02758" target="_blank" rel="noopener">论文下载地址</a>，以及作者提供的源码<a href="https://github.com/yulunzhang/RCAN" target="_blank" rel="noopener">GitHub仓库</a></p>
+<p>在论文中，作者注意到以下两个事实：<br><font color=HotPink>(1)</font> 卷积神经网络的深度是决定超分性能的关键因素，但较深的网络很难训练。<br><font color=HotPink>(2)</font> 低分辨率的输入和特征包含丰富的低频信息，这些信息在各个通道间被同等对待是不合理的，从而阻碍了CNN的表达能力</p>
+<p>这里说一下低频信息的概念，低频信息指的是图像缓慢变化的部分。通俗讲，图像中边缘部分变化较大，称为高频信息。而边缘以内的部分缓慢变化，就称作低频信息。</p>
+<p>于是作者提出了一种非常深的<font color=MediumPurple>&quot;RCAN&quot;</font>网络，用于超分问题，网络中比较值得关注的部分有两个：<br><font color=HotPink>(1)</font> 提出了RIR(residual in residual)结构，用来构建非常深的能有效训练的网络。<br><font color=HotPink>(2)</font> 提出了一种注意力机制(CA)，通过考虑通道间的相互依赖关系，自适应地重新调整通道特征。</p>
+<a id="more"></a>  
+<div>
+<img src="https://sm.ms/image/8vJVc32rhFTDUXK">
+<center><font face="Microsoft YaHei" size=2 color="grey">各超分模型效果示意图</font></center>
+</div>
+
+<h2 id="二、网络结构"><a href="#二、网络结构" class="headerlink" title="二、网络结构"></a>二、网络结构</h2><h3 id="1、整体结构"><a href="#1、整体结构" class="headerlink" title="1、整体结构"></a>1、整体结构</h3><p>在介绍RCAN的网络结构之前，我们整体审视一下深度学习在超分领域的源头——SRCNN网络 </p>
+<div>
+<img src="https://sm.ms/image/A73soXv9HIaDkWK">
+<center><font face="Microsoft YaHei" size=2 color="grey">SRCNN网络结构</font></center>
+</div>
+
+<p>SRCNN网络是首先将深度学习体系应用到超分领域的一片论文。其思路非常简洁朴素，首先使用双三次插值方法将LR(低分辨率图像)放大到需要的尺寸，然后通过三个卷积层，最后得到超分后的图像SR</p>
+<p>然后我们来看RCAN的网络结构 </p>
+<div>
+<img src="https://sm.ms/image/ZjfFhKTgz4n6RpV">
+<center><font face="Microsoft YaHei" size=2 color="grey">RCAN网络结构</font></center>
+</div>
+
+<p>RCAN网络整体上也是这样的架构，但和SRCNN不同的是，RCAN并没有采用先放大LR的思路，而是直接将LR传入网络处理，最后输出前再将其重建为需要的尺寸。这种处理方法是借鉴了ESPCNN网络的思路与结果，可以降低计算量，同时得到更好的效果。</p>
+<p>RCAN首先将LR图片传入网络，经过一个$3 \times 3 \times 64$、zero-padding的卷积层做浅特征提取，然后传入RIR模块。随后使用ESPCNN的方法对图片上采样，最后通过一个$3 \times 3 \times 3$、zero-padding的卷积层输出结果。</p>
+<p>RIR模块内包括$G=10$个RG模块，通过10个RG模块后经过一个$3 \times 3 \times 64$、zero-padding的卷积层，与输入RIR模块前的图片信息做Long skip connection(LSC)长连接。</p>
+<p>每个RG模块内包含$B=20$个RCAB模块，通过20个RCAB模块后经过一个$3 \times 3 \times 64$、zero-padding的卷积层，与输入RB模块前的图片信息做Short skip connection(SSC)长连接。</p>
+<p>其中，SSC使得主网络可以学习剩余信息(residual information)。利用LSC和SSC，在训练过程中更容易绕过更丰富的低频信息。</p>
+<p>输入RCAB模块的信息，首先通过一个$3 \times 3 \times 64$、zero-padding的卷积层，然后使用ReLU函数激活后再次通过一个$3 \times 3 \times 64$、zero-padding的卷积层，随后进入注意力模块，最后和输入RCAB模块前的信息做连接后输出对应信息。</p>
+<h3 id="2、注意力模块"><a href="#2、注意力模块" class="headerlink" title="2、注意力模块"></a>2、注意力模块</h3><p>上面介绍了RCAN网络的整体结构。第一部分说了RCAN网络两大创新点，一个是RIR结构，一个是注意力模块。这里讲一下RCAN网络的注意力模块。</p>
+<p>在此之前，我们先来看另一个网络——SE-Net  </p>
+<div>
+<img src="https://sm.ms/image/1LsDiXSITyMbZ3f">
+<center><font face="Microsoft YaHei" size=2 color="grey">SE-Net通道注意力模块</font></center>
+</div>
+
+<p>SE-Net是首先将通道注意力模块应用到深度学习的一篇论文，其结构如下：<br><font color=HotPink>(1)</font> 先将输入信息进行一个全局平均池化，即对每一层所有元素取平均值作为该层的数值，将$H \times W \times C$的矩阵转化为$1 \times 1 \times C$的矩阵</p>
+<p>$$z_{c} = H_{GP} (x_{c}) = \frac{1} {H \times W} \sum_{i=1}^{H} \sum_{j=1}^{W} x_{c}(i,j)$$</p>
+<p><font color=HotPink>(2)</font> 经过一个r倍的下采样、ReLU函数激活<br><font color=HotPink>(3)</font> 经过一个r倍的上采样、Sigmoid函数激活<br><font color=HotPink>(4)</font> 将得到的$1 \times 1 \times C$结果与输入注意力网络前的$H \times W \times C$矩阵做乘积，这就是通道权重。</p>
+<p>然后回到RCAN网络，我们可以看到RCAN网络中使用的注意力模块其实就是SE-Net中涉及到的通道注意力方法。所以，RCAN论文所做的贡献其实大体可以概括为<font color=MediumPurple>&quot;将其他领域表现较好的注意力方法引入到了超分领域，进行了一系列的有机结合&quot;</font>  </p>
+<div>
+<img src="https://sm.ms/image/A67nOjWbIGYZTks">
+<center><font face="Microsoft YaHei" size=2 color="grey">RCAN网络中的注意力模块</font></center>
+</div>
+
+<p>其代码如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Channel Attention (CA) Layer</span></span><br><span class="line"><span class="comment"># channel = 64; reduction = 16</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">CALayer</span><span class="params">(nn.Module)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, channel, reduction=<span class="number">16</span>)</span>:</span></span><br><span class="line">        super(CALayer, self).__init__()</span><br><span class="line">        <span class="comment"># global average pooling: feature --&gt; point</span></span><br><span class="line">        self.avg_pool = nn.AdaptiveAvgPool2d(<span class="number">1</span>)</span><br><span class="line">        <span class="comment"># feature channel downscale and upscale --&gt; channel weight</span></span><br><span class="line">        self.conv_du = nn.Sequential(</span><br><span class="line">                nn.Conv2d(channel, channel // reduction, <span class="number">1</span>, padding=<span class="number">0</span>, bias=<span class="literal">True</span>),</span><br><span class="line">                nn.ReLU(inplace=<span class="literal">True</span>),</span><br><span class="line">                nn.Conv2d(channel // reduction, channel, <span class="number">1</span>, padding=<span class="number">0</span>, bias=<span class="literal">True</span>),</span><br><span class="line">                nn.Sigmoid()</span><br><span class="line">        )</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">forward</span><span class="params">(self, x)</span>:</span></span><br><span class="line">        y = self.avg_pool(x)</span><br><span class="line">        y = self.conv_du(y)</span><br><span class="line">        <span class="keyword">return</span> x * y</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、损失函数与评价指标"><a href="#3、损失函数与评价指标" class="headerlink" title="3、损失函数与评价指标"></a>3、损失函数与评价指标</h3><p>RCAN在损失函数与评价指标这里没有过多改动，使用L1损失函数，使用PSNR以及SSIM作为评价指标。<br><a href="https://arxiv.org/abs/1707.02921" target="_blank" rel="noopener">EDSR论文</a>中关于损失函数有一些评价：L2损失可以最大化PSNR，但L1损失可以提供更好的收敛性。感兴趣的可以去读一读。</p>
+<h2 id="三、环境搭建、代码复现"><a href="#三、环境搭建、代码复现" class="headerlink" title="三、环境搭建、代码复现"></a>三、环境搭建、代码复现</h2><p>作者在其<a href="https://github.com/yulunzhang/RCAN" target="_blank" rel="noopener">GitHub仓库</a>中提供了源码，下载即可。</p>
+<h3 id="1、环境搭建"><a href="#1、环境搭建" class="headerlink" title="1、环境搭建"></a>1、环境搭建</h3><p>requirement.txt中已经将需要的包完整列出了，需要注意的有两点：<br><font color=HotPink>(1)</font> python版本为3.6，注意在conda创建虚拟环境时正确设置python版本。<br><font color=HotPink>(2)</font> pytorch版本比较老，是0.4.1版本的pytorch。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 依次执行以下指令</span></span><br><span class="line"><span class="comment"># torch</span></span><br><span class="line">pip3 install http://download.pytorch.org/whl/cu80/torch<span class="number">-0.4</span><span class="number">.1</span>-cp36-cp36m-win_amd64.whl</span><br><span class="line"><span class="comment"># torchvision</span></span><br><span class="line">pip install torchvision==<span class="number">0.2</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
+<p>训练部分我是用的pytorch 0.4.1<br>但是我在推理部分无意中用了一次高版本的python和pytorch环境(python 3.8,pytorch 1.10.0)，貌似没有问题，可以正常使用。</p>
+<h3 id="2、图片下采样方法"><a href="#2、图片下采样方法" class="headerlink" title="2、图片下采样方法"></a>2、图片下采样方法</h3><p>需要注意，下采样是使用matlab工具进行的。<br>所以如果你需要下采样自己的图片来做推理，请不要直接用python库进行下采样操作。如果使用不同的下采样方法，会导致推理出来的SR图片效果很差。</p>
+<p>如果一定要避开matlab也不是不行，请参考<a href="https://github.com/sanghyun-son/bicubic_pytorch" target="_blank" rel="noopener">bicubic_pytorch</a>进行操作，这个方法下采样出来的图片和matlab效果接近。<br>&quot;Consistent with MATLAB&#39;s <code>imresize(&#39;bicubic&#39;)</code>, with or without antialiasing&quot;</p>
+<p>下载bicubic_pytorch后，在&quot;core.py&quot;所在文件夹下新建一个python文件，内容如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> core</span><br><span class="line"><span class="keyword">import</span> torch</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> cv2</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">"输入图片(HR)路径"</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">img_lr = core.imresize(torch.from_numpy(img.transpose((<span class="number">2</span>, <span class="number">0</span>, <span class="number">1</span>))), scale=<span class="number">1</span>/<span class="number">4</span>)  <span class="comment"># scale = 1/2 1/3 1/4 etc.</span></span><br><span class="line">img_lr = img_lr.cpu().numpy()</span><br><span class="line">img_lr = np.ascontiguousarray(img_lr.transpose((<span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>)))</span><br><span class="line"></span><br><span class="line">cv2.imwrite(<span class="string">"输出图片(LR)路径"</span>, img_lr)</span><br></pre></td></tr></table></figure>
+<p>运行即可生成下采样后的LR文件</p>
+<h3 id="3、数据集"><a href="#3、数据集" class="headerlink" title="3、数据集"></a>3、数据集</h3><p>作者的GitHub仓库Readme部分有DIV2K数据集的下载地址，下载即可。<br>然后源码中附带了Set5测试集。<br>如果你还需要其他超分数据集，例如Urban100等，自己去网上找吧~</p>
+<h3 id="4、options-py文件主要参数含义"><a href="#4、options-py文件主要参数含义" class="headerlink" title="4、options.py文件主要参数含义"></a>4、options.py文件主要参数含义</h3><p>这里只介绍一些主要的参数<br><font color=HotPink>(1)</font> <font color=MediumPurple>&#39;--n_threads&#39;</font>: 加载数据时使用的线程数量，由于作者是在Linux上运行的代码，所以默认值不为1。如果你要在win下使用，请将此值设置为1<br><font color=HotPink>(2)</font> <font color=MediumPurple>&#39;--dir_data&#39;</font>: 数据集路径，需要注意路径格式问题。举个例子，我使用的是DIV2K数据集，<br>&quot;D:\...\RCAN\DIV2K\bicubic\DIV2K\DIV2K_train_HR&quot;中存放了1000张HR图片<br>&quot;D:\...\RCAN\DIV2K\bicubic\DIV2K\DIV2K_train_LR_bicubic&quot;中有三个文件夹&quot;X2&quot;、&quot;X3&quot;、&quot;X4&quot;，分别存放了缩放相应倍数的LR图片<br>那么我的<font color=MediumPurple>&#39;--dir_data&#39;</font>应该设置为&quot;D:\...\RCAN\DIV2K\bicubic&quot;</p>
+<p>这里一定要注意windows下路径表示方式和linux的区别<br><font color=HotPink>(3)</font> <font color=MediumPurple>&#39;--data_train&#39; &#39;--data_test&#39;</font>: 这两项是指定训练集和测试集的类别，默认为&#39;DIV2K&#39;。<br>其调用在&quot;./RCAN_TrainCode/code/data/<strong>init</strong>.py&quot;中的18、19行：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">module_train = import_module(<span class="string">'data.'</span> + args.data_train.lower())</span><br><span class="line">trainset = getattr(module_train, args.data_train)(args)</span><br></pre></td></tr></table></figure>
+<p>根据args.data_train的值来调用&quot;./RCAN_TrainCode/code/data&quot;文件夹下的对应py文件，如果是默认值&#39;DIV2K&#39;，那么就会调用&#39;div2k.py&#39;。<br>如果你想使用别的数据集，自己根据情况调整。<br><font color=HotPink>(4)</font> <font color=MediumPurple>&#39;--n_train&#39; &#39;--n_val&#39;</font>: 这两项是训练集和测试集的图片数划分。<br>默认是--n_train 800 --n_val 5，即在1000张图片里，取前800张作为训练集，取801-805张作为测试集。具体数字可以修改。</p>
+<p>但比较有意思的一点是，作者在Issue中提出，自己并不是很喜欢在训练时引入测试集。比起这种做法，作者更喜欢在训练整体结束后再使用Set5作为测试集测试PSNR等数据。因为这样可以减少很多训练时间。<br>我在训练时使用的是前800张图片作为训练集，然后使用Set5的5张图片作为801-805张图片的测试集。<br><font color=HotPink>(5)</font> <font color=MediumPurple>&#39;--ext&#39;</font>: 这一项有两个数值可以选择：sep_reset和sep<br>事实上，模型在训练之前会先扫一遍数据集，将图片转换为二进制npy文件。sep_reset表示重新进行以上操作，一般用于更换/修改数据集图片时，或者第一次使用该数据集训练时；sep表示直接用已有npy文件不再重新生成，一般用于该数据集已经训练过的时候，此时使用sep可以省去准备图片的时间。<br><font color=HotPink>(6)</font> <font color=MediumPurple>&#39;--scale&#39;</font>: 倍率，取决于你是训练几倍的模型，这个倍率也决定了网络会加载哪一部分LR文件。上面提到了，&quot;DIV2K_train_LR_bicubic&quot;文件夹下有&quot;X2&quot;、&quot;X3&quot;、&quot;X4&quot;三个文件夹，scale设置为多少，网络就会加载对应文件夹下的下采样数据作为LR传入。<br><font color=HotPink>(7)</font> <font color=MediumPurple>&#39;--pre_train&#39;</font>: 预训练模型位置。如果不使用预训练模型，设置值为&#39;.&#39;即可。<br><font color=HotPink>(8)</font> <font color=MediumPurple>&#39;--n_resblocks&#39; &#39;--n_resgroups&#39; &#39;--n_feats&#39;</font>: 这三项是调整网络结构用的。分别是RCAB模块的数量，默认值20；RG模块的数量，默认值10；卷积核层数，默认值64。<br><font color=HotPink>(9)</font> <font color=MediumPurple>&#39;--epochs&#39;</font>: 训练轮数，根据作者所述，按照作者提供的参数训练1000轮后可以复现出论文的结果。<br><font color=HotPink>(10)</font> <font color=MediumPurple>&#39;--batch_size&#39;</font>: batch_size大小，即将多少张图片打包传入网络。默认值为16。<br>有趣的是，和其他模型不同，RCAN中batch_size影响的不只是训练速度，也影响了训练质量。我们看&quot;RCAN_TrainCode\code\data\div2k.py&quot;文件第15行代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">self.repeat = args.test_every // (args.n_train // args.batch_size)</span><br></pre></td></tr></table></figure>
+<p>self.repeat指的是将训练集重复多少遍，test_every默认值1000，所以self.repeat = 1000 // (800 // 16) = 20<br>也就是说，训练集800张图片被重复了20遍共16000张图片传入网络。<br>换个角度讲，如果batch_size设置的比较低，那么self.repeat就会很小，最终影响训练结果。<br>考虑到batch_size为16，即每轮跑了1000个iters，200轮正好跑200000个iters，此时学习率下降一半。具体学习率相关参数见<font color=HotPink>(12)</font>和<font color=HotPink>(13)</font><br><font color=HotPink>(11)</font> <font color=MediumPurple>&#39;--test_only&#39;</font>: 这个是在推理的时候用的。指的是只做推理不训练。其实仔细看RCAN代码结构可以发现，它的训练部分和推理部分用的是一套代码，全靠参数来决定程序走向。<br><font color=HotPink>(12)</font> <font color=MediumPurple>&#39;--lr&#39;</font>: 初始学习率<br><font color=HotPink>(13)</font> <font color=MediumPurple>&#39;--lr_decay&#39;</font>: 学习率多少个epochs减半，默认值200。<br><font color=HotPink>(13)</font> <font color=MediumPurple>&#39;--save&#39; &#39;--load&#39;</font>: 这个是结果保存的路径，以及加载模型的路径。注意区分这个<font color=MediumPurple>&#39;--load&#39;</font>和前面的<font color=MediumPurple>&#39;--pre_train&#39;</font>。我们看&quot;RCAN_TrainCode\code\utility.py&quot;的48-57行代码。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> args.load == <span class="string">'.'</span>:</span><br><span class="line">    <span class="keyword">if</span> args.save == <span class="string">'.'</span>: args.save = now</span><br><span class="line">    self.dir = <span class="string">'../experiment/'</span> + args.save</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    self.dir = <span class="string">'../experiment/'</span> + args.load</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(self.dir):</span><br><span class="line">        args.load = <span class="string">'.'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        self.log = torch.load(self.dir + <span class="string">'/psnr_log.pt'</span>)</span><br><span class="line">        print(<span class="string">'Continue from epoch &#123;&#125;...'</span>.format(len(self.log)))</span><br></pre></td></tr></table></figure>
+<p>从这里可以看到网络是如何定义存储路径的。保存路径是当前目录的上一级目录下的experiment文件夹。所以如果训练完模型去当前目录找结果那肯定是找不到的。<br>这种保存方式会存在一个问题，就是多次训练的时候，一定要注意先转移上一次训练的结果，不然······<br>我把这部分代码做了修改，使其更人性化一些，供参考：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> args.load == <span class="string">'.'</span>:</span><br><span class="line">    <span class="keyword">if</span> args.save == <span class="string">'.'</span>: args.save = now</span><br><span class="line">    self.dir = <span class="string">'./runs_latest/'</span> + args.save</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    self.dir = <span class="string">'./runs_latest/'</span> + args.load</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(self.dir):</span><br><span class="line">        args.load = <span class="string">'.'</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        self.log = torch.load(self.dir + <span class="string">'/psnr_log.pt'</span>)</span><br><span class="line">        print(<span class="string">'Continue from epoch &#123;&#125;...'</span>.format(len(self.log)))</span><br></pre></td></tr></table></figure>
+<p>这样就把结果保存到了当前目录下的runs_latest文件夹下。这样每次跑完就把runs_latest更名为runsX，不会覆盖或者搞混了，也不用再去上一级目录找了。<br><font color=HotPink>(14)</font> <font color=MediumPurple>&#39;--save_models&#39;</font>: 保存所有中间模型。网络默认只会留下最后一次模型和最好一次模型。<br><font color=HotPink>(15)</font> <font color=MediumPurple>&#39;--print_every&#39;</font>: 这个参数指的是多少个batches后在控制台log一次当前进度。这里的数值看你自己其他参数的设置情况决定。需要注意一点，这里是&quot;多少个batches&quot;而不是&quot;多少张图片&quot;，一个batches的图片数量是由batch_size决定的。<br><font color=HotPink>(16)</font> <font color=MediumPurple>&#39;--save_results&#39;</font>: 保存输出结果，这个是一定要加的。</p>
+<h2 id="四、可能出现的问题"><a href="#四、可能出现的问题" class="headerlink" title="四、可能出现的问题"></a>四、可能出现的问题</h2><h3 id="1、scipy-misc读写图片报错"><a href="#1、scipy-misc读写图片报错" class="headerlink" title="1、scipy.misc读写图片报错"></a>1、scipy.misc读写图片报错</h3><p>如果使用源代码直接运行，会出现scipy.misc的报错，原因是requirement.txt中scipy的版本过低。<br>解决方法：<br>找到代码中所有使用&quot;misc.imread()&quot;和&quot;misc.imsave()&quot;的部分，将其替换为&quot;imageio.imread()&quot;和&quot;imageio.imsave()&quot;即可。</p>
+<h3 id="2、CUDA-out-of-memory"><a href="#2、CUDA-out-of-memory" class="headerlink" title="2、CUDA: out of memory"></a>2、CUDA: out of memory</h3><p>不多说了，出现这个问题检查自己的option.py参数吧，什么事情都讲究量力而行嘛，为何不降低batch_size呢？</p>
+<h3 id="3、推理时不显示PSNR数值-显示PSNR-0"><a href="#3、推理时不显示PSNR数值-显示PSNR-0" class="headerlink" title="3、推理时不显示PSNR数值(显示PSNR: 0)"></a>3、推理时不显示PSNR数值(显示PSNR: 0)</h3><p>这个不是bug，仔细看代码可以发现，推理时压根就没将HR图像传入网络，只传入了LR图像，所以压根没有计算PSNR这一说。<br>一般来讲，超分领域的论文PSNR计算用的都是matlab，其计算方式和下面这种python直接计算是有区别的，matlab计算出来会偏大。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">psnr1</span><span class="params">(img1, img2)</span>:</span></span><br><span class="line">    mse = np.mean((img1 / <span class="number">1.0</span> - img2 / <span class="number">1.0</span>) ** <span class="number">2</span>)</span><br><span class="line">    <span class="keyword">if</span> mse &lt; <span class="number">1.0e-10</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">100</span></span><br><span class="line">    <span class="keyword">return</span> <span class="number">10</span> * math.log10(<span class="number">255.0</span> ** <span class="number">2</span> / mse)</span><br></pre></td></tr></table></figure>
+<p>所以为了复现论文结果或者统一标准，建议还是跑出结果后去matlab进行相关PSNR的计算，作者在源码中也给了相应的matlab文件。</p>
+<p>如果非要在推理过程中显示PSNR的话也不是没有办法。我们看&quot;RCAN_TestCode/code/data/myimage.py&quot;文件第46行内容：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">return</span> common.np2Tensor([lr], self.args.rgb_range)[<span class="number">0</span>], <span class="number">-1</span>, filename</span><br></pre></td></tr></table></figure>
+<p>对比其他py文件相对应部分可以发现，这里retrun的三个东西分别是LR、HR和文件名，而推理环节压根就没有传入HR图像，传入的是-1作为占位符。<br>所以要想计算PSNR，我们要讲HR图像传入。修改后的<strong>getitem</strong>函数如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__getitem__</span><span class="params">(self, idx)</span>:</span></span><br><span class="line">    filename = os.path.split(self.filelist_lr[idx])[<span class="number">-1</span>]</span><br><span class="line">    filename, _ = os.path.splitext(filename)</span><br><span class="line">    <span class="comment">#lr = misc.imread(self.filelist[idx])</span></span><br><span class="line">    lr = imageio.imread(self.filelist_lr[idx])</span><br><span class="line">    lr = common.set_channel([lr], self.args.n_colors)[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        hr = imageio.imread(self.filelist_hr[idx])</span><br><span class="line">        hr = common.set_channel([hr], self.args.n_colors)[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">return</span> common.np2Tensor([lr], self.args.rgb_range)[<span class="number">0</span>], common.np2Tensor([hr], self.args.rgb_range)[<span class="number">0</span>], filename</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">return</span> common.np2Tensor([lr], self.args.rgb_range)[<span class="number">0</span>], <span class="number">-1</span>, filename</span><br></pre></td></tr></table></figure>
+<p>即将原本options.py里的<font color=MediumPurple>&#39;--testpath&#39;</font>分成两部分，<font color=MediumPurple>&#39;--testpath_lr&#39;</font>和<font color=MediumPurple>&#39;--testpath_hr&#39;</font>然后用上面这段代码重新定义<strong>getitem</strong>函数。return的时候将HR图像一起送入dataloader。</p>
+<p>当然，把<font color=MediumPurple>&#39;--testpath&#39;</font>分成两部分后，其他地方涉及到<font color=MediumPurple>&#39;--testpath&#39;</font>的也要相应改成<font color=MediumPurple>&#39;--testpath_lr&#39;</font>，比如<strong>getitem</strong>下面的<strong>len</strong>函数就要修改。<br>其余地方这里就不再一一列举了，如果实在找不到可以尝试跑一跑看报错内容然后反过来再去定位。</p>
+<h3 id="4、推理时输出的图片不是SR而是HR"><a href="#4、推理时输出的图片不是SR而是HR" class="headerlink" title="4、推理时输出的图片不是SR而是HR"></a>4、推理时输出的图片不是SR而是HR</h3><p>这个问题其实很难发现，出现的原因是保存结果部分有两个函数，分别是save_results和save_results_nopostfix。<br>&quot;RCAN_TestCode\code\trainer.py&quot;中默认调用的是save_results_nopostfix，使得后续输出的HR由于文件同名覆盖掉了之前的SR。在这种情况下如果再去计算PSNR结果可想而知(笑)。</p>
+<p>解决方法：取消&quot;RCAN_TestCode\code\trainer.py&quot;中108行的注释，同时将109行注释掉，即改为下面这样：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> self.args.save_results:</span><br><span class="line">    self.ckp.save_results(filename, save_list, scale)</span><br><span class="line">    <span class="comment">#self.ckp.save_results_nopostfix(filename, save_list, scale)</span></span><br></pre></td></tr></table></figure>
+<p>然后打开&quot;RCAN_TestCode\code\utility.py&quot;，将其中的save_results函数替换为：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save_results</span><span class="params">(self, filename, save_list, scale)</span>:</span></span><br><span class="line">    <span class="comment">#filename = '&#123;&#125;/results/&#123;&#125;_x&#123;&#125;_'.format(self.dir, filename, scale)</span></span><br><span class="line">    filename = <span class="string">'&#123;&#125;/&#123;&#125;/x&#123;&#125;/&#123;&#125;'</span>.format(self.dir, self.args.testset, scale, filename)</span><br><span class="line">    postfix = (<span class="string">'SR'</span>, <span class="string">'LR'</span>, <span class="string">'HR'</span>)</span><br><span class="line">    <span class="keyword">for</span> v, p <span class="keyword">in</span> zip(save_list, postfix):</span><br><span class="line">        normalized = v[<span class="number">0</span>].data.mul(<span class="number">255</span> / self.args.rgb_range)</span><br><span class="line">        ndarr = normalized.byte().permute(<span class="number">1</span>, <span class="number">2</span>, <span class="number">0</span>).cpu().numpy()</span><br><span class="line">        <span class="comment">#misc.imsave('&#123;&#125;&#123;&#125;.png'.format(filename, p), ndarr)</span></span><br><span class="line">        imageio.imsave(<span class="string">'&#123;&#125;&#123;&#125;.png'</span>.format(filename, p), ndarr)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="五、对比与总结"><a href="#五、对比与总结" class="headerlink" title="五、对比与总结"></a>五、对比与总结</h2><h3 id="RCAN的优势"><a href="#RCAN的优势" class="headerlink" title="RCAN的优势"></a>RCAN的优势</h3><p>我们先看这么一张有意思的结果图，这张图片来源于论文，作者并未着重强调但是这个结果展示的内容十分有意思： </p>
+<div>
+<img src="https://sm.ms/image/FbrL15if7DtHGUI">
+<center><font face="Microsoft YaHei" size=2 color="grey">Urban100数据集img_040</font></center>
+</div>
+
+<p>我们可以看到在8倍任务的情况下，RCAN之前的几种方法不仅仅是结果模糊，甚至是给出了错误的结论。而RCAN的注意力结构使得网络成功的关注到了高频的线条信息。这是几种模型对比最为明显的一张结果图。</p>
+<h3 id="SAN网络"><a href="#SAN网络" class="headerlink" title="SAN网络"></a>SAN网络</h3><p>网络来源于论文《Second-order Attention Network for Single Image Super-Resolution》，同样可以找到开源的代码。SAN网络在RCAN的基础上改进了注意力模块，利用二阶信息协方差计算注意力。<br>区别在于RCAN使用全局平均池化，而SAN使用协方差计算二阶特征统计的attention</p>
+<p>具体计算方法可以参考SAN论文及代码。</p>
+<h3 id="HAN网络"><a href="#HAN网络" class="headerlink" title="HAN网络"></a>HAN网络</h3><p>网络来源于论文《Single Image Super-Resolution via a Holistic Attention Network》。HAN网络引入了layer attention module通过获取不同深度特征之间的依赖关系，对不同层的特征分配不同的注意权重。</p>
+<p>我们知道RCAN注意到的是各个通道间信息被平等对待是不合理的。而HAN注意到的是各个深度(经过不同次数卷积核)的信息被平等对待是不合理的，从而为不同深度的信息分配权重。</p>
+<p>具体实现方法及网络结构图可以参考HAN论文及代码。</p>
+<p><font color=MediumPurple> </font></p>
+<center>居中</center>    <p align="left">左对齐</p>      <p align="right">右对齐</p>    **粗体**     *斜体*
+
+<div>
+<img src="">
+<center><font face="Microsoft YaHei" size=2 color="grey">图片描述</font></center>
+</div>
+
+<p>MathJax等号对齐：</p>
+<p>\begin{align}<br>&amp;= \\<br>&amp;=<br>\end{align}</p>
+<p><a href="">点击下载</a></p>
+<p><a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)"><i class="icon-price-tags icon" style="color:MediumPurple"></i><font size=3 color=MediumPurple> 标签</font></a></p>
+
+    
+
+    
+    <div class="declare" style="font-family:Microsoft YaHei"> 
+      <ul class="post-copyright">
+        
+          <li>
+            由<font color=MediumPurple face=FZAY107> Etern </font>发表于<font color=MediumPurple face=FZAY107> 2022-08-13 </font>，添加 			
             
-  
-  
+              <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)"><i class="icon-price-tags icon" style="color:MediumPurple"></i><font size=3 face=FZAY107 color=MediumPurple> 超分</font></a> 
+            
+              <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)"><i class="icon-price-tags icon" style="color:MediumPurple"></i><font size=3 face=FZAY107 color=MediumPurple> 注意力网络</font></a> 
+            
+            标签，归类于 <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)"><i class="icon-book icon" style="color:MediumPurple"></i><font size=3 face=FZAY107 color=MediumPurple> CV实践及论文阅读</font></a> 
+          </li>
+        
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://etern213.github.io/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/" title="Image Super-Resolution Using Very Deep Residual Channel Attention Networks" target="_blank">https://etern213.github.io/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
     
     
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/13/%E9%BC%A0%E6%A0%87%E5%92%8C%E8%BF%9E%E5%87%BB%E7%BB%83%E4%B9%A0V1.16/" class="archive-article-date">
-        <time datetime="2020-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/07/13/%E9%BC%A0%E6%A0%87%E5%92%8C%E8%BF%9E%E5%87%BB%E7%BB%83%E4%B9%A0V1.16/">鼠标和连击练习V1.16</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">自制地图</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">超分</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">注意力网络</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/test1/" class="article-tag-list-link color6">test1</a>  <!-- categories/test1/ -->
+        			<a href="/CV实践及论文阅读/" class="article-tag-list-link color6">CV实践及论文阅读</a>  <!-- categories/CV实践及论文阅读/ -->
         		</li>
       		
 		</ul>
 	</div>
 
 
+    
+
+    
+    <!--
+
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> ->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://etern213.github.io/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/" alt="微信分享二维码"> ->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+-->
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/06/18/%E5%BD%95%E5%83%8F%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7WC3%20Replay%20Tool/" class="archive-article-date">
-        <time datetime="2020-06-17T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-18</time>
-</a>
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/06/18/%E5%BD%95%E5%83%8F%E5%88%86%E6%9E%90%E5%B7%A5%E5%85%B7WC3%20Replay%20Tool/">录像分析工具WC3 Replay Tool</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">War3小工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/test1/" class="article-tag-list-link color6">test1</a>  <!-- categories/test1/ -->
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/05/03/%E5%9B%A2%E6%88%98%E8%AE%AD%E7%BB%83%E9%87%8D%E7%BD%AE%E7%89%88V1.37/" class="archive-article-date">
-        <time datetime="2020-05-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/05/03/%E5%9B%A2%E6%88%98%E8%AE%AD%E7%BB%83%E9%87%8D%E7%BD%AE%E7%89%88V1.37/">团战训练重置版V1.37</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">自制地图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/test1/" class="article-tag-list-link color6">test1</a>  <!-- categories/test1/ -->
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/05/03/%E8%81%8A%E5%A4%A9%E9%A2%91%E9%81%93%E3%80%81%E8%81%8A%E5%A4%A9%E6%A0%8F%E4%BB%A5%E5%8F%8A%E4%B8%80%E4%BA%9B%E6%8C%87%E4%BB%A4%E7%9A%84%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
-        <time datetime="2020-05-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/05/03/%E8%81%8A%E5%A4%A9%E9%A2%91%E9%81%93%E3%80%81%E8%81%8A%E5%A4%A9%E6%A0%8F%E4%BB%A5%E5%8F%8A%E4%B8%80%E4%BA%9B%E6%8C%87%E4%BB%A4%E7%9A%84%E4%BB%8B%E7%BB%8D/">魔兽争霸3聊天频道、聊天栏以及一些指令的介绍</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">War3小技巧</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/test1/" class="article-tag-list-link color6">test1</a>  <!-- categories/test1/ -->
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/04/17/Warcraft%20III1.32%E7%89%88%E6%9C%AC%E4%BF%AE%E6%94%B9%E5%AD%97%E4%BD%93%E6%96%B9%E6%B3%95/" class="archive-article-date">
-        <time datetime="2020-04-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-17</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/04/17/Warcraft%20III1.32%E7%89%88%E6%9C%AC%E4%BF%AE%E6%94%B9%E5%AD%97%E4%BD%93%E6%96%B9%E6%B3%95/">Warcraft III1.32版本修改字体方法</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">War3小技巧</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/test1/" class="article-tag-list-link color6">test1</a>  <!-- categories/test1/ -->
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">« Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
+    <div>
+      <section id="comments" class="comments">
+        
+          <style>
+            .giscus-frame{max-width: 80%;position:relative;left:10%;top:0px}
+            @media only screen and (max-width: 750px){
+              .giscus-frame{max-width: 80%;position:relative;left:10%;top:5px}
+            }
+          </style>
+        
+        <script src="https://giscus.app/client.js"
+                data-repo="Etern213/etern213.github.io"
+                data-repo-id="MDEwOlJlcG9zaXRvcnkyMzQwMDUxMTE="
+                data-category="Announcements"
+                data-category-id="DIC_kwDODfKid84CQJXs"
+                data-mapping="title"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="light"
+                data-lang="zh-CN"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </section>
+    </div>
   
 
 
@@ -509,8 +571,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
