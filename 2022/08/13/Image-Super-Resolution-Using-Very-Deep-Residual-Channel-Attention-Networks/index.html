@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://s2.loli.net/2022/08/13/A67nOjWbIGYZTks.png">
 <meta property="og:image" content="https://s2.loli.net/2022/08/13/FbrL15if7DtHGUI.png">
 <meta property="article:published_time" content="2022-08-12T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-13T04:35:10.794Z">
+<meta property="article:modified_time" content="2022-08-13T04:43:58.219Z">
 <meta property="article:author" content="Fantastic World">
 <meta property="article:tag" content="超分">
 <meta property="article:tag" content="注意力网络">
@@ -224,7 +224,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">4.9k字</span>
+      <span class="post-count">4.8k字</span>
     </span>
   </span>
 <!--
@@ -271,7 +271,7 @@
 <p>RCAN网络整体上也是这样的架构，但和SRCNN不同的是，RCAN并没有采用先放大LR的思路，而是直接将LR传入网络处理，最后输出前再将其重建为需要的尺寸。这种处理方法是借鉴了ESPCNN网络的思路与结果，可以降低计算量，同时得到更好的效果。</p>
 <p>RCAN首先将LR图片传入网络，经过一个$3 \times 3 \times 64$、zero-padding的卷积层做浅特征提取，然后传入RIR模块。随后使用ESPCNN的方法对图片上采样，最后通过一个$3 \times 3 \times 3$、zero-padding的卷积层输出结果。</p>
 <p>RIR模块内包括$G=10$个RG模块，通过10个RG模块后经过一个$3 \times 3 \times 64$、zero-padding的卷积层，与输入RIR模块前的图片信息做Long skip connection(LSC)长连接。</p>
-<p>每个RG模块内包含$B=20$个RCAB模块，通过20个RCAB模块后经过一个$3 \times 3 \times 64$、zero-padding的卷积层，与输入RB模块前的图片信息做Short skip connection(SSC)长连接。</p>
+<p>每个RG模块内包含$B=20$个RCAB模块，通过20个RCAB模块后经过一个$3 \times 3 \times 64$、zero-padding的卷积层，与输入RB模块前的图片信息做Short skip connection(SSC)短连接。</p>
 <p>其中，SSC使得主网络可以学习剩余信息(residual information)。利用LSC和SSC，在训练过程中更容易绕过更丰富的低频信息。</p>
 <p>输入RCAB模块的信息，首先通过一个$3 \times 3 \times 64$、zero-padding的卷积层，然后使用ReLU函数激活后再次通过一个$3 \times 3 \times 64$、zero-padding的卷积层，随后进入注意力模块，最后和输入RCAB模块前的信息做连接后输出对应信息。</p>
 <h3 id="2、注意力模块"><a href="#2、注意力模块" class="headerlink" title="2、注意力模块"></a>2、注意力模块</h3><p>上面介绍了RCAN网络的整体结构。第一部分说了RCAN网络两大创新点，一个是RIR结构，一个是注意力模块。这里讲一下RCAN网络的注意力模块。</p>
@@ -345,18 +345,6 @@
 <h3 id="HAN网络"><a href="#HAN网络" class="headerlink" title="HAN网络"></a>HAN网络</h3><p>网络来源于论文《Single Image Super-Resolution via a Holistic Attention Network》。HAN网络引入了layer attention module通过获取不同深度特征之间的依赖关系，对不同层的特征分配不同的注意权重。</p>
 <p>我们知道RCAN注意到的是各个通道间信息被平等对待是不合理的。而HAN注意到的是各个深度(经过不同次数卷积核)的信息被平等对待是不合理的，从而为不同深度的信息分配权重。</p>
 <p>具体实现方法及网络结构图可以参考HAN论文及代码。</p>
-<p><font color=MediumPurple> </font></p>
-<center>居中</center>    <p align="left">左对齐</p>      <p align="right">右对齐</p>    **粗体**     *斜体*
-
-<div>
-<img src="">
-<center><font face="Microsoft YaHei" size=2 color="grey">图片描述</font></center>
-</div>
-
-<p>MathJax等号对齐：</p>
-<p>\begin{align}<br>&amp;= \\<br>&amp;=<br>\end{align}</p>
-<p><a href="">点击下载</a></p>
-<p><a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)"><i class="icon-price-tags icon" style="color:MediumPurple"></i><font size=3 color=MediumPurple> 标签</font></a></p>
 
     
 
