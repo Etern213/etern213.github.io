@@ -323,8 +323,8 @@ i {
     src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.8.ttf) format("truetype")
 }
 @font-face {
-	font-family:FZAY106;
-    src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.6.ttf) format("truetype")
+	font-family:FZAY109;
+    src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.9.ttf) format("truetype")
 }
 @font-face {
 	font-family:Abella;
@@ -504,7 +504,7 @@ i {
 /* 316 */
 body,button,input,select,textarea {
 	color:#1a1a1a;
-	font-family:FZAY108,FZAY107,FZAY106,lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+	font-family:FZAY109,FZAY108,FZAY107,lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
 	font-size:20px;
 	font-size:1.1rem;
 	line-height:1.75
@@ -829,7 +829,7 @@ body {
 }
 /* 316 */
 .article-entry .highlight .line {
-	font-family: Cascadia Code,FZAY108;
+	font-family: Cascadia Code,FZAY109;
 	font-weight: 400;
 	color:#1a1a1a;
 	text-shadow: 1px 1px #ffffff;
@@ -1775,7 +1775,7 @@ to {
 	padding:1px 3px;
 	margin:0 3px;
 	background:#eaebeb;
-	font-family: Cascadia Code,FZAY108;
+	font-family: Cascadia Code,FZAY109;
 	font-weight: 400;
 	color:#1a1a1a;
 	text-shadow: 1px 1px #ffffff;
