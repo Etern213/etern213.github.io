@@ -315,15 +315,7 @@ i {
 }
 /* 506 830 1775 */
 @font-face {
-	font-family:FZAY107;
-    src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.7.ttf) format("truetype")
-}
-@font-face {
-	font-family:FZAY108;
-    src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.8.ttf) format("truetype")
-}
-@font-face {
-	font-family:FZAY109;
+	font-family:FZAY;
     src:url(https://cdn.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.0.9.ttf) format("truetype")
 }
 @font-face {
@@ -504,7 +496,7 @@ i {
 /* 316 */
 body,button,input,select,textarea {
 	color:#1a1a1a;
-	font-family:FZAY109,FZAY108,FZAY107,lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
+	font-family:FZAY,lucida grande,lucida sans unicode,lucida,helvetica,Hiragino Sans GB,Microsoft YaHei,WenQuanYi Micro Hei,sans-serif;
 	font-size:20px;
 	font-size:1.1rem;
 	line-height:1.75
@@ -516,6 +508,9 @@ body {
 	height:100%;
 	overflow-x:hidden;
 	overflow-y:auto
+}
+iframe {
+	height:650px;
 }
 #mobile-nav {
 	display:none
@@ -829,7 +824,7 @@ body {
 }
 /* 316 */
 .article-entry .highlight .line {
-	font-family: Cascadia Code,FZAY109;
+	font-family: Cascadia Code,FZAY;
 	font-weight: 400;
 	color:#1a1a1a;
 	text-shadow: 1px 1px #ffffff;
@@ -1775,7 +1770,7 @@ to {
 	padding:1px 3px;
 	margin:0 3px;
 	background:#eaebeb;
-	font-family: Cascadia Code,FZAY109;
+	font-family: Cascadia Code,FZAY;
 	font-weight: 400;
 	color:#1a1a1a;
 	text-shadow: 1px 1px #ffffff;
@@ -2133,9 +2128,18 @@ to {
 .jump-container:hover .icon-back {
 	background:rgba(36,193,246,.9)
 }
-.jump-container,.toc-container {
+.jump-container {
 	position:relative;
 	cursor:pointer;
+	top:0px;
+	width:40px;
+	height:40px;
+	opacity:.8
+}
+.toc-container {
+	position:relative;
+	cursor:pointer;
+	top:-250px;
 	width:40px;
 	height:40px;
 	opacity:.8
@@ -2406,6 +2410,9 @@ to {
 	height:auto;
 	overflow-x:hidden;
 	overflow-y:auto
+}
+iframe {
+	height:220px;
 }
 #mobile-nav {
 	display:block
