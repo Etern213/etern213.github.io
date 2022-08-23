@@ -509,7 +509,7 @@ body {
 	overflow-x:hidden;
 	overflow-y:auto
 }
-iframe {
+.iframe-video {
 	height:650px;
 }
 #mobile-nav {
@@ -2406,12 +2406,12 @@ to {
 	float:right
 }
 @media screen and (max-width:800px) {
-	#container,body,html {
+#container,body,html {
 	height:auto;
 	overflow-x:hidden;
 	overflow-y:auto
 }
-iframe {
+.iframe-video {
 	height:270px;
 }
 #mobile-nav {
