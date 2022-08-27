@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://etern213.github.io">
-  <title>Tag: 自制地图 | Fantastic World</title>
+  <title>题目4 | Fantastic World</title>
   <meta name="generator" content="hexo-theme-yilia-plus">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Fantastic World">
-<meta property="og:url" content="https://etern213.github.io/tags/%E8%87%AA%E5%88%B6%E5%9C%B0%E5%9B%BE/index.html">
+  <meta name="description" content="连接正$n$边形$(n\ge 4)$的中心与各个顶点形成$n$个全等三角形，用最多$n-2$种颜色为各三角形染色，要求两个相邻的三角形不能同色，记共有涂色方法$R_{n}$种，证明：$$R_{n} &#x3D; (n-3)^{n} + (-1)^{n-2} (n-3)$$">
+<meta property="og:type" content="article">
+<meta property="og:title" content="题目4">
+<meta property="og:url" content="https://etern213.github.io/2022/08/27/%E9%A2%98%E7%9B%AE4/index.html">
 <meta property="og:site_name" content="Fantastic World">
+<meta property="og:description" content="连接正$n$边形$(n\ge 4)$的中心与各个顶点形成$n$个全等三角形，用最多$n-2$种颜色为各三角形染色，要求两个相邻的三角形不能同色，记共有涂色方法$R_{n}$种，证明：$$R_{n} &#x3D; (n-3)^{n} + (-1)^{n-2} (n-3)$$">
 <meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-08-26T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-08-27T02:45:45.629Z">
 <meta property="article:author" content="Fantastic World">
 <meta name="twitter:card" content="summary">
   
@@ -210,183 +214,217 @@
               class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-题目4" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
   
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/13/Etern%E7%9A%84%E8%87%AA%E5%88%B6%E5%9C%B0%E5%9B%BE%E9%9B%86/" class="archive-article-date">
-        <time datetime="2020-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/07/13/Etern%E7%9A%84%E8%87%AA%E5%88%B6%E5%9C%B0%E5%9B%BE%E9%9B%86/">Etern的自制地图集</a>
-	
+    <h1 class="article-title" itemprop="name">
+      题目4
     </h1>
   
 
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">自制地图</a>
-        		</li>
-      		
-		</ul>
-	</div>
+  
+  
+        
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+        
+        <meta name="referrer" content="no-referrer-when-downgrade" />
 
-          
+<a href="/2022/08/27/%E9%A2%98%E7%9B%AE4/" class="archive-article-date">
+        <time datetime="2022-08-26T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-27</time>
+</a>
+
+  
+  
+    
+<div style="margin-top:10px;">
+  <span class="post-time">
+    <span class="post-meta-item-icon">
+      <!-- fonts.scss -->
+      <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
+      <i class="icon-statistics"></i>
+      <span class="post-meta-item-text"> 字数统计:</span>
+      <span class="post-count">278字</span>
+    </span>
+  </span>
+<!--
+  <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="icon-book icon"></i>
+      <span class="post-meta-item-text"> 阅读时长≈</span>
+      <span class="post-count">1分</span>
+    </span>
+  </span>
+</div>
+-->
+
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <p>连接正$n$边形$(n\ge 4)$的中心与各个顶点形成$n$个全等三角形，用最多$n-2$种颜色为各三角形染色，要求两个相邻的三角形不能同色，记共有涂色方法$R_{n}$种，证明：<br>$$R_{n} = (n-3)^{n} + (-1)^{n-2} (n-3)$$</p>
+<a id="more"></a>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>首先将这$n$个三角形顺时针依次标号$1,2,\dots ,n$<br>记$a_{k}(k=2,3,\dots ,n)$表示第k格与第1格颜色相同的概率，则$a_{2}=0$<br>记$b_{k}(k=2,3,\dots ,n)$表示第k格与第1格颜色不同的概率，则$b_{2}=1$<br>于是，我们有<br>\begin{cases}<br>a_{k}=\frac{1}{n-3}b_{k-1} \\<br>b_{k}=1-a_{k}<br>\end{cases}<br>即<br>$$b_{k}=1-\frac{1}{n-3}b_{k-1}$$<br>那么<br>$$b_{k}-\frac{n-3}{n-2}=-\frac{1}{n-3}b_{k-1}+1-\frac{n-3}{n-2}$$<br>可得<br>$$b_{k}-\frac{n-3}{n-2}=-\frac{1}{n-3}(b_{k-1}-\frac{n-3}{n-2})$$<br>进而<br>$$b_{k}=\frac{1}{n-2}\times (-\frac{1}{n-3})^{k-2}+\frac{n-3}{n-2}$$<br>则<br>\begin{align}<br>R_{n} &amp;= (n-2)(n-3)^{n-1}\times b_{n} \\<br>&amp;= (n-3)^{n} + (-1)^{n-2} (n-3)<br>\end{align}<br>得证</p>
+
+    
+
+    
+    <div class="declare" style="font-family:Microsoft YaHei"> 
+      <ul class="post-copyright">
+        
+          <li>
+            由<font color=MediumPurple face=FZAY> Etern </font>发表于<font color=MediumPurple face=FZAY> 2022-08-27 </font>，归类于 <a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)"><i class="icon-book icon" style="color:MediumPurple"></i><font size=3 face=FZAY color=MediumPurple> 数学趣题</font></a> 
+          </li>
+        
+        <li>
+          <strong>本文链接：</strong>
+          <a href="https://etern213.github.io/2022/08/27/题目4/" title="题目4" target="_blank">https://etern213.github.io/2022/08/27/题目4/</a>
+        </li>
+        
+        <li>
+          <strong>版权声明： </strong>
+          本博客所有文章除特别声明外，均采用 <a href="https://www.apache.org/licenses/LICENSE-2.0.html" rel="external nofollow" target="_blank">Apache License 2.0</a> 许可协议。转载请注明出处！
+        </li>
+        
+      </ul>
+    </div>
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+    
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/test1/" class="article-tag-list-link color6">test1</a>  <!-- categories/test1/ -->
+        			<a href="/数学趣题/" class="article-tag-list-link color6">数学趣题</a>  <!-- categories/数学趣题/ -->
         		</li>
       		
 		</ul>
 	</div>
 
 
+    
+
+    
+    <!--
+
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <!-- <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a> ->
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+     <!-- <img src="//pan.baidu.com/share/qrcode?url=https://etern213.github.io/2022/08/27/%E9%A2%98%E7%9B%AE4/" alt="微信分享二维码"> ->
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+-->
+    
+    <div class="clearfix"></div>
+  </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/07/13/%E9%BC%A0%E6%A0%87%E5%92%8C%E8%BF%9E%E5%87%BB%E7%BB%83%E4%B9%A0V1.16/" class="archive-article-date">
-        <time datetime="2020-07-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-13</time>
-</a>
 
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <div class="toc-container tooltip-left">
+                    <div style="font-size:17px;color:MediumPurple;line-height:18px;padding-top:3px"><b>回到顶部</b></div> <!-- <i class="icon-font icon-back"></i> -->
+                </div>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/07/13/%E9%BC%A0%E6%A0%87%E5%92%8C%E8%BF%9E%E5%87%BB%E7%BB%83%E4%B9%A0V1.16/">鼠标和连击练习V1.16</a>
-	
-    </h1>
+    <div>
+      <section id="comments" class="comments">
+        
+          <style>
+            .giscus-frame{max-width: 80%;position:relative;left:10%;top:0px}
+            @media only screen and (max-width: 800px){
+              .giscus-frame{max-width: 80%;position:relative;left:10%;top:5px}
+            }
+          </style>
+        
+        <script src="https://giscus.app/client.js"
+                data-repo="Etern213/etern213.github.io"
+                data-repo-id="MDEwOlJlcG9zaXRvcnkyMzQwMDUxMTE="
+                data-category="Announcements"
+                data-category-id="DIC_kwDODfKid84CQJXs"
+                data-mapping="title"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="light"
+                data-lang="zh-CN"
+                crossorigin="anonymous"
+                async>
+        </script>
+    </section>
+    </div>
   
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">自制地图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/test1/" class="article-tag-list-link color6">test1</a>  <!-- categories/test1/ -->
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/05/03/%E5%9B%A2%E6%88%98%E8%AE%AD%E7%BB%83%E9%87%8D%E7%BD%AE%E7%89%88V1.37/" class="archive-article-date">
-        <time datetime="2020-05-02T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-	
-	  <a class="archive-article-title" href="/2020/05/03/%E5%9B%A2%E6%88%98%E8%AE%AD%E7%BB%83%E9%87%8D%E7%BD%AE%E7%89%88V1.37/">团战训练重置版V1.37</a>
-	
-    </h1>
-  
-
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">自制地图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/test1/" class="article-tag-list-link color6">test1</a>  <!-- categories/test1/ -->
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-    
 
 
           </div>
@@ -431,9 +469,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
