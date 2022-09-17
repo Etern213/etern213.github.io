@@ -18,7 +18,7 @@
 <meta property="og:description" content="有一堆个数为$n$的棋子，游戏双方轮流拿取棋子，满足：(1)先手不能在第一次把所有棋子取完。(2)每次至少取走一颗棋子。(3)每次取的棋子数不能超过对手刚取棋子数的2倍。(4)取走最后一颗棋子的人为赢家问：假设两人足够聪明，是否有一方有必胜策略？证明你的结论。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-07-23T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-07-27T10:45:38.099Z">
+<meta property="article:modified_time" content="2022-09-17T10:06:06.797Z">
 <meta property="article:author" content="Fantastic World">
 <meta name="twitter:card" content="summary">
   
@@ -30,7 +30,7 @@
   
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
   
-  <link rel="stylesheet" type="text/css" href="/./main.a5fda8.css?v=1.1.0">
+  <link rel="stylesheet" type="text/css" href="/./main.a5fda8.css?v=1.1.1">
   <style type="text/css">
     
     #container.show {
@@ -272,7 +272,7 @@
     
     <p>有一堆个数为$n$的棋子，游戏双方轮流拿取棋子，满足：<br>(1)先手不能在第一次把所有棋子取完。<br>(2)每次至少取走一颗棋子。<br>(3)每次取的棋子数不能超过对手刚取棋子数的2倍。<br>(4)取走最后一颗棋子的人为赢家<br>问：假设两人足够聪明，是否有一方有必胜策略？证明你的结论。</p>
 <a id="more"></a>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>猜想:当$n$为非$Fibonacci$数时，先手有必胜策略；当$n$为$Fibonacci$数时，后手有必胜策略。<br>我们先证明如下结论：当$n$为$Fibonacci$数时，后手有必胜策略。<br>当$n=2$时，先手取$1$剩$1$，后手取完。<br>当$n=3$时，先手取$1$剩$2$，后手取完。或先手取$2$剩$1$，后手取完。<br>记$F_1=2$，$F_2=3$。假设$n$为$F_{n-2}$和$F_{n-1}$时，后手有必胜策略$(n≥3)$<br>下面证明，$n=F_n$时，后手也有必胜策略。考虑到：<br>$$F_n=F_{n-1}+F_{n-2}$$<br>由于<br>$$F_{n-1}=F_{n-2}+F_{n-3}&lt;2F_{n-2}$$<br>所以先手不会一次取完$F_{n-2}$个棋子。<br>而由归纳假设，后手可以在有限步之内取完$F_{n-2}$个棋子且先手面对$F_{n-1}$个棋子束手无策。<br>这样，就证明了结论。<br>下面，我们再证明：当$n$为非$Fibonacci$数时，先手有必胜策略。<br>当$n=4$时，先手取$1$剩$3$，后手取$1$剩$2$或取$2$剩$1$，先手必胜。<br>同样的，当$n=6$时，先手有必胜策略。<br>假设$4≤n≤G$(这里，$G≥6$且$G+1$不为$Fibonacci$数)且$n$为非$Fibonacci$数时，先手有必胜策略。<br>记$F_n$为不超过$G+1$的最大$Fibonacci$数。则$G+1$可写为$F_n+m$，这里：<br>$$1≤m&lt;F_{n-1}$$<br>($1°$)当$1≤m&lt;\frac{1}{2}F_n$时。先手可直接一次取$m$个棋子，借助上述结论，后手面对$F_n$个棋子束手无策。<br>($2°$)$\frac{1}{2}F_n≤m&lt;F_{n-1}$时，有<br>$$m&lt;F_{n-1}&lt;F_n=G+1-m≤G$$<br>即$\frac{1}{2}F_n≤m&lt;G$<br>又<br>$$\frac{1}{2}F_n=\frac{1}{2}(F_{n-1}+F_{n-2})$$<br>即<br>$$F_{n-2}&lt;m&lt;F_{n-1}$$<br>这表明，$m$不为$Fibonacci$数且$4≤m≤G$<br>由归纳假设，先手有把握在有限步取完$m$个棋子，而后手面对$F_n$个棋子束手无策。<br>综上，结论得证。</p>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>猜想:当$n$为非$Fibonacci$数时，先手有必胜策略；当$n$为$Fibonacci$数时，后手有必胜策略。<br>我们先证明如下结论：当$n$为$Fibonacci$数时，后手有必胜策略。<br>当$n=2$时，先手取$1$剩$1$，后手取完。<br>当$n=3$时，先手取$1$剩$2$，后手取完。或先手取$2$剩$1$，后手取完。<br>记$F_1=2$，$F_2=3$。假设$n$为$F_{n-2}$和$F_{n-1}$时，后手有必胜策略$(n≥3)$<br>下面证明，$n=F_n$时，后手也有必胜策略。考虑到：<br>$$F_n=F_{n-1}+F_{n-2}$$由于<br>$$F_{n-1}=F_{n-2}+F_{n-3}&lt;2F_{n-2}$$所以先手不会一次取完$F_{n-2}$个棋子。<br>而由归纳假设，后手可以在有限步之内取完$F_{n-2}$个棋子且先手面对$F_{n-1}$个棋子束手无策。<br>这样，就证明了结论。<br>下面，我们再证明：当$n$为非$Fibonacci$数时，先手有必胜策略。<br>当$n=4$时，先手取$1$剩$3$，后手取$1$剩$2$或取$2$剩$1$，先手必胜。<br>同样的，当$n=6$时，先手有必胜策略。<br>假设$4≤n≤G$(这里，$G≥6$且$G+1$不为$Fibonacci$数)且$n$为非$Fibonacci$数时，先手有必胜策略。<br>记$F_n$为不超过$G+1$的最大$Fibonacci$数。则$G+1$可写为$F_n+m$，这里：<br>$$1≤m&lt;F_{n-1}$$($1°$)当$1≤m&lt;\frac{1}{2}F_n$时。先手可直接一次取$m$个棋子，借助上述结论，后手面对$F_n$个棋子束手无策。<br>($2°$)$\frac{1}{2}F_n≤m&lt;F_{n-1}$时，有<br>$$m&lt;F_{n-1}&lt;F_n=G+1-m≤G$$即$\frac{1}{2}F_n≤m&lt;G$<br>又<br>$$\frac{1}{2}F_n=\frac{1}{2}(F_{n-1}+F_{n-2})$$即<br>$$F_{n-2}&lt;m&lt;F_{n-1}$$这表明，$m$不为$Fibonacci$数且$4≤m≤G$<br>由归纳假设，先手有把握在有限步取完$m$个棋子，而后手面对$F_n$个棋子束手无策。<br>综上，结论得证。</p>
 
     
 

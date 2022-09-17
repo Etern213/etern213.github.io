@@ -18,7 +18,7 @@
 <meta property="og:description" content="求极限$$\lim_{x \to 0} \frac{ln\frac{1+x}{1-x} -2ln(x+\sqrt{1+x^2})}{x^3}$$">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-02T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-08-03T13:50:27.607Z">
+<meta property="article:modified_time" content="2022-09-17T10:49:22.600Z">
 <meta property="article:author" content="Fantastic World">
 <meta name="twitter:card" content="summary">
   
@@ -30,7 +30,7 @@
   
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
   
-  <link rel="stylesheet" type="text/css" href="/./main.a5fda8.css?v=1.1.0">
+  <link rel="stylesheet" type="text/css" href="/./main.a5fda8.css?v=1.1.1">
   <style type="text/css">
     
     #container.show {
@@ -249,7 +249,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">597字</span>
+      <span class="post-count">1.3k字</span>
     </span>
   </span>
 <!--
@@ -258,7 +258,7 @@
     <span class="post-meta-item-icon">
       <i class="icon-book icon"></i>
       <span class="post-meta-item-text"> 阅读时长≈</span>
-      <span class="post-count">3分</span>
+      <span class="post-count">6分</span>
     </span>
   </span>
 </div>
@@ -272,14 +272,21 @@
     
     <p>求极限<br>$$\lim_{x \to 0} \frac{ln\frac{1+x}{1-x} -2ln(x+\sqrt{1+x^2})}{x^3}$$</p>
 <a id="more"></a>
-<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>在看正确答案之前，我们先看下面这种解法错在了哪里：<br>\begin{align}<br>原式 &amp;= \lim_{x \to 0} \frac{ln(1+\frac{2}{1-x}-2) -2ln(1+x+\sqrt{1+x^2}-1)}{x^3} \\<br>&amp;= \lim_{x \to 0} \frac{\frac{2}{1-x}-2 -2(x+\sqrt{1+x^2}-1)}{x^3} (因为x\to 0时，ln(1+x)\sim x) \\<br>&amp;= \lim_{x \to 0} \frac{\frac{2}{1-x}-2x-2\sqrt{1+x^2}}{x^3} \\<br>&amp;= \lim_{x \to 0} \frac{2(1+x)-2x-2(1+\frac{1}{2}x^2)}{x^3} (因为x\to 0时，(1+x)^\alpha \sim 1+\alpha x) \\<br>&amp;= \lim_{x \to 0} \frac{-x^2}{x^3} \\<br>&amp;= 0<br>\end{align}</p>
+<h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>在看正确答案之前，我们先看下面这种解法错在了哪里：<br>\begin{align}<br>原式 &amp;= \lim_{x \to 0} \frac{ln(1+\frac{2}{1-x}-2) -2ln(1+x+\sqrt{1+x^2}-1)}{x^3} \\<br>&amp;= \lim_{x \to 0} \frac{\frac{2}{1-x}-2 -2(x+\sqrt{1+x^2}-1)}{x^3} (因为x\to 0时，ln(1+x)\sim x) \\<br>&amp;= \lim_{x \to 0} \frac{\frac{2}{1-x}-2x-2\sqrt{1+x^2}}{x^3} \\<br>&amp;= \lim_{x \to 0} \frac{2(1+x)-2x-2(1+\frac{1}{2}x^2)}{x^3} (因为x\to 0时，(1+x)^\alpha \sim 1+\alpha x) \\<br>&amp;= \lim_{x \to 0} \frac{-x^2}{x^3}<br>\end{align}极限不存在。</p>
 <p>我一开始的解答是上面这样的，错在哪里了呢？</p>
 <hr>
 <p>事实上，由于等价无穷小替换在求极限的时候过于常用也过于好用，导致我们忽略了等价无穷小替换需要注意的条件：</p>
-<p>(1)乘、除关系可以换。<br>若$\alpha \to \alpha_{1}$，$\beta \to \beta_{1}$，则$\lim \frac{\alpha}{\beta}=\lim \frac{\alpha_{1}}{\beta}=\lim \frac{\alpha}{\beta_{1}}=\lim \frac{\alpha_{1}}{\beta_{1}}$<br>(2)加、减关系<font color=MediumPurple>在一定条件下</font>可以换。<br>①若$\alpha \to \alpha_{1}$，$\beta \to \beta_{1}$，且$\lim \frac{\alpha_{1}}{\beta_{1}}=A \neq 1$，则$\alpha-\beta\sim \alpha_{1}-\beta_{1}$。<br>②若$\alpha \to \alpha_{1}$，$\beta \to \beta_{1}$，且$\lim \frac{\alpha_{1}}{\beta_{1}}=A \neq -1$，则$\alpha+\beta\sim \alpha_{1}+\beta_{1}$。</p>
+<p><font color=HotPink>(1)</font> 乘、除关系可以换。<br>若$\alpha \sim  \alpha_{1}$，$\beta \sim  \beta_{1}$，则$\lim \frac{\alpha}{\beta}=\lim \frac{\alpha_{1}}{\beta}=\lim \frac{\alpha}{\beta_{1}}=\lim \frac{\alpha_{1}}{\beta_{1}}$<br><font color=HotPink>(2)</font> 加、减关系<font color=MediumPurple>在一定条件下</font>可以换。<br>①若$\alpha \sim \alpha_{1}$，$\beta \sim \beta_{1}$，且$\lim \frac{\alpha_{1}}{\beta_{1}}=A \neq 1$，则$\alpha-\beta\sim \alpha_{1}-\beta_{1}$。<br>②若$\alpha \sim \alpha_{1}$，$\beta \sim \beta_{1}$，且$\lim \frac{\alpha_{1}}{\beta_{1}}=A \neq -1$，则$\alpha+\beta\sim \alpha_{1}+\beta_{1}$。</p>
 <p>看完等价无穷小替换的原则我们再看上面的解答步骤，第一次等价无穷小代换时，由于<br>$$\lim_{x \to 0} \frac{\frac{2}{1-x}-2}{2(x+\sqrt{1+x^2}-1)} = 1$$<br>所以，第一次等价无穷小的替换是不成立的。<br>同理，读者可以验证第二次等价无穷小替换也是不成立的。</p>
 <hr>
 <p>正确解答如下：<br>\begin{align}<br>原式 &amp;= \lim_{x \to 0} \frac{ln(1+x)-ln(1-x) -2ln(x+\sqrt{1+x^2})}{x^3} \\<br>&amp;= \lim_{x \to 0} \frac{\frac{1}{1+x} + \frac{1}{1-x} - \frac{2}{\sqrt{1+x^2}}}{3x^2} (注意，这里依旧不能用(1+x)^\alpha \sim 1+\alpha x进行等价无穷小替换，理由同上) \\<br>&amp;= \lim_{x \to 0} \frac{-\frac{1}{(1+x)^2} + \frac{1}{(1-x)^2} + \frac{2x}{(1+x^2)\sqrt{1+x^2}}}{6x} \\<br>&amp;= \lim_{x \to 0} [\frac{-\frac{1}{(1+x)^2} + \frac{1}{(1-x)^2}}{6x}+\frac{1}{3(1+x^2)\sqrt{1+x^2}}] \\<br>&amp;= \lim_{x \to 0} \frac{\frac{2}{(1+x)^3} + \frac{2}{(1-x)^3}}{6}+\frac{1}{3} \\<br>&amp;= 1<br>\end{align}</p>
+<hr>
+<p>题目解决了，下面仔细说说我对等价无穷小代换的理解。</p>
+<p>事实上，等价无穷小代换求极限的本质依旧是泰勒展开，所以严格来讲并不能将&quot;等价无穷小代换&quot;单独罗列出来作为单独的方法。<br>但是它实在是太好用了，省去很多功夫，所以被放大化了。</p>
+<p>翻阅了很多教材，在讲等价无穷小代换的时候，教材会强调只有乘除可以换，加减不行。但加减并非不能代换，只是有条件。我们再来看一遍上面写的加减代换条件：<br><font color=HotPink>(2)</font> 加、减关系<font color=MediumPurple>在一定条件下</font>可以换。<br>①若$\alpha \sim \alpha_{1}$，$\beta \sim \beta_{1}$，且$\lim \frac{\alpha_{1}}{\beta_{1}}=A \neq 1$，则$\alpha-\beta\sim \alpha_{1}-\beta_{1}$。<br>②若$\alpha \sim \alpha_{1}$，$\beta \sim \beta_{1}$，且$\lim \frac{\alpha_{1}}{\beta_{1}}=A \neq -1$，则$\alpha+\beta\sim \alpha_{1}+\beta_{1}$。</p>
+<p>这是一个充要条件吗？<br>显然不是，我们看这个极限问题。<br>$$\lim_{x \to 0} \frac{\tan x - \sin x}{x^{3}}$$这个极限问题非常基础，很多教材常拿它告诫读者，不能进行加减代换。<font color=MediumPurple>以下解法是错误的：</font><br>$$\lim_{x \to 0} \frac{\tan x - \sin x}{x^{3}} = \lim_{x \to 0} \frac{x - x}{x^{3}} = 0$$我们可以理解成，因为$\lim \frac{x}{x} = 1$所以不能代换。<br>但是，这样代换是正确的：<br>$$\lim_{x \to 0} \frac{\tan x - \sin x}{x^{3}} = \lim_{x \to 0} \frac{(x+\frac{1}{3}x^{3}) - (x-\frac{1}{6}x^{3})}{x^{3}} = \frac{1}{2}$$虽然结果正确，但是依旧不满足上面那个加减代换的条件，因为$\lim \frac{x+\frac{1}{3}x^{3}}{x-\frac{1}{6}x^{3}} = 1$。</p>
+<p>这样就可以看出来，上面那个关于加减代换的条件只是一个充分条件。满足条件时可以放心代换，但是不满足条件不一定说明这个代换是错的。<br>于是我一直在想能否找到一个充要条件，或是将这个充分条件加强。但最终没有得到什么有趣的结论。</p>
+<p>其实，上面的第二种代换方式将$\tan x$和$\sin x$展开到三次项，已经没有必要去硬说$\tan x \sim x+\frac{1}{3}x^{3}$和$\sin x \sim x-\frac{1}{6}x^{3}$是两个等价无穷小代换了，这样写岂不是更直观清楚？<br>$$\lim_{x \to 0} \frac{\tan x - \sin x}{x^{3}} = \lim_{x \to 0} \frac{(x+\frac{1}{3}x^{3}+o(x^{3})) - (x-\frac{1}{6}x^{3}+o(x^{3}))}{x^{3}} = \frac{1}{2}$$<br>所以，最终得出的结论是，符合上述加减代换条件时，放心代换求极限。不符合时，使用泰勒展开将分子处于加减关系的各项展开到分母的精度求极限，或是使用洛必达法则等其他方法求极限。</p>
 
     
 
