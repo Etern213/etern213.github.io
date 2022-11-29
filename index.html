@@ -26,7 +26,7 @@
   
     <link rel="apple-touch-icon" href="/apple-touch-icon-180x180.png">
   
-  <link rel="stylesheet" type="text/css" href="/./main.a5fda8.css?v=1.1.2">
+  <link rel="stylesheet" type="text/css" href="/./main.a5fda8.css?v=1.1.3">
   <style type="text/css">
     
     #container.show {
@@ -826,6 +826,109 @@
 
 
   
+    <article id="post-Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+  
+  
+    <h1 itemprop="name">
+	
+	  <a class="article-title" href="/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/">论文阅读：Image Super-Resolution Using Very Deep Residual Channel Attention Networks</a>
+	
+    </h1>
+  
+
+
+  
+  
+<a href="/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/" class="archive-article-date">
+        <time datetime="2022-08-12T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-13</time>
+</a>
+
+  
+  
+    
+
+  
+  </header>
+  
+  <div class="article-entry" itemprop="articleBody">
+    
+    <h2 id="一、论文背景及创新点"><a href="#一、论文背景及创新点" class="headerlink" title="一、论文背景及创新点"></a>一、论文背景及创新点</h2><p>首先是<a href="https://arxiv.org/abs/1807.02758" target="_blank" rel="noopener">论文下载地址</a>，以及作者提供的源码<a href="https://github.com/yulunzhang/RCAN" target="_blank" rel="noopener">GitHub仓库</a></p>
+<p>在论文中，作者注意到以下两个事实：<br><font color=HotPink>(1)</font> 卷积神经网络的深度是决定超分性能的关键因素，但较深的网络很难训练。<br><font color=HotPink>(2)</font> 低分辨率的输入和特征包含丰富的低频信息，这些信息在各个通道间被同等对待是不合理的，从而阻碍了CNN的表达能力</p>
+<p>这里说一下低频信息的概念，低频信息指的是图像缓慢变化的部分。通俗讲，图像中边缘部分变化较大，称为高频信息。而边缘以内的部分缓慢变化，就称作低频信息。</p>
+<p>于是作者提出了一种非常深的<font color=MediumPurple>&quot;RCAN&quot;</font>网络，用于超分问题，网络中比较值得关注的部分有两个：<br><font color=HotPink>(1)</font> 提出了RIR(residual in residual)结构，用来构建非常深的能有效训练的网络。<br><font color=HotPink>(2)</font> 提出了一种注意力机制(CA)，通过考虑通道间的相互依赖关系，自适应地重新调整通道特征。</p>
+    
+    <a class="article-more-a" href="/2022/08/13/Image-Super-Resolution-Using-Very-Deep-Residual-Channel-Attention-Networks/#more">阅读更多 >></a>
+    
+    
+
+    
+
+  </div>
+  <div class="article-info article-info-index">
+    
+    
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">超分</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">注意力网络</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+    
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/CV实践及论文阅读/" class="article-tag-list-link color6">CV实践及论文阅读</a>  <!-- categories/CV实践及论文阅读/ -->
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+    
+
+    
+    <div class="clearfix"></div>
+  </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <div class="toc-container tooltip-left">
+                    <div style="font-size:17px;color:MediumPurple;line-height:18px;padding-top:3px"><b>回到顶部</b></div> <!-- <i class="icon-font icon-back"></i> -->
+                </div>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-“财富密码”" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -943,91 +1046,6 @@
     <p>求极限<br>$$\lim_{x \to 0} \frac{ln\frac{1+x}{1-x} -2ln(x+\sqrt{1+x^2})}{x^3}$$</p>
     
     <a class="article-more-a" href="/2022/08/03/%E9%A2%98%E7%9B%AE3/#more">阅读更多 >></a>
-    
-    
-
-    
-
-  </div>
-  <div class="article-info article-info-index">
-    
-    
-    
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/数学趣题/" class="article-tag-list-link color6">数学趣题</a>  <!-- categories/数学趣题/ -->
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-    
-
-    
-    <div class="clearfix"></div>
-  </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <div class="toc-container tooltip-left">
-                    <div style="font-size:17px;color:MediumPurple;line-height:18px;padding-top:3px"><b>回到顶部</b></div> <!-- <i class="icon-font icon-back"></i> -->
-                </div>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-题目2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-  
-  
-    <h1 itemprop="name">
-	
-	  <a class="article-title" href="/2022/08/02/%E9%A2%98%E7%9B%AE2/">题目2</a>
-	
-    </h1>
-  
-
-
-  
-  
-<a href="/2022/08/02/%E9%A2%98%E7%9B%AE2/" class="archive-article-date">
-        <time datetime="2022-08-01T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-08-02</time>
-</a>
-
-  
-  
-    
-
-  
-  </header>
-  
-  <div class="article-entry" itemprop="articleBody">
-    
-    <p>设$f(x)=\ln_{}{(x+\sqrt{1+x^{2}})}$，则$f^{&#39;&#39;}(0)$的值为_____</p>
-    
-    <a class="article-more-a" href="/2022/08/02/%E9%A2%98%E7%9B%AE2/#more">阅读更多 >></a>
     
     
 
@@ -1225,11 +1243,19 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">War3小工具</a>
+                <a href="javascript:void(0)" class="js-tag color3">War3小技巧</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">War3小技巧</a>
+                <a href="javascript:void(0)" class="js-tag color3">超分</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">注意力网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">War3小工具</a>
               </li>
             
             <div class="clearfix"></div>
