@@ -18,7 +18,7 @@
 <meta property="og:description" content="已知函数$f(x) &#x3D; 2e^x + \sin x - 2(x \ge 0)$(1)求$f(x)$的单调区间与零点。(2)若$e^x + \ln_{}{(x+1)} - 1 \ge af(x)$恒成立，求实数$a$的取值范围。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-12-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-12-17T11:47:35.650Z">
+<meta property="article:modified_time" content="2022-12-18T09:19:05.318Z">
 <meta property="article:author" content="Fantastic World">
 <meta name="twitter:card" content="summary">
   
@@ -249,7 +249,7 @@
       <!-- 百度字体平台:http://fontstore.baidu.com/static/editor/index.html -->
       <i class="icon-statistics"></i>
       <span class="post-meta-item-text"> 字数统计:</span>
-      <span class="post-count">307字</span>
+      <span class="post-count">338字</span>
     </span>
   </span>
 <!--
@@ -273,9 +273,9 @@
     <p>已知函数$f(x) = 2e^x + \sin x - 2(x \ge 0)$<br>(1)求$f(x)$的单调区间与零点。<br>(2)若$e^x + \ln_{}{(x+1)} - 1 \ge af(x)$恒成立，求实数$a$的取值范围。</p>
 <a id="more"></a>
 <h2 id="解答"><a href="#解答" class="headerlink" title="解答"></a>解答</h2><p>(1)$f&#39;(x) = 2e^x + \cos x \ge 2e^x - 1 &gt; 0$<br>故$f(x)$在$[0,+\infty)$上单增<br>由于$f(0) = 0$，故零点唯一，为$x = 0$</p>
-<p>(2)我们先证明<br>$$\ln_{}{(x+1)} &gt; 2 \sin x$$在$[0,+\infty)$上恒成立，证明如下：<br>&nbsp;&nbsp;&nbsp;&nbsp;①$x \in [1,+\infty)$时，<br>$$\ln_{}{(x+1)} \ge \ln_{}{2} = \frac{1}{2} \ln_{}{4} &gt; \frac{1}{2} \ln_{}{e} = \frac{1}{2} &gt; \frac{1}{2} \sin x$$<br>&nbsp;&nbsp;&nbsp;&nbsp;②$x \in [0,1)$时，<br>$$\ln_{}{(x+1)} \ge \frac{x}{x+1} &gt; \frac{1}{2} x \ge \frac{1}{2} \sin x$$<br>回到本题，我们有<br>$$\frac{e^x + \ln_{}{(x+1)} - 1}{f(x)} = \frac{e^x + \ln_{}{(x+1)} - 1}{2e^x + \sin x - 2} &gt; \frac{e^x + \frac{1}{2}\sin x  - 1}{2e^x + \sin x - 2} = \frac{1}{2}$$<br>故$a \le \frac{1}{2}$</p>
-<p>另一方面，若$a &gt; \frac{1}{2}$，有如下矛盾：<br>当$x &gt; max (\frac{4}{2a-1} ,4a)$时，<br>$$\frac{e^x + \ln_{}{(x+1)} - 1}{2e^x + \sin x - 2} &lt; \frac{e^x + \ln_{}{(x+1)} - 1}{2e^x - 4} &lt; \frac{e^x + x}{2e^x - 4} &lt; \frac{2ae^x - 4a}{2e^x - 4} = a$$<br>这与题意矛盾。</p>
-<p>综上所述，$a \in [-\infty,\frac{1}{2})$</p>
+<p>(2)我们先证明$$\ln_{}{(x+1)} &gt; 2 \sin x$$在$[0,+\infty)$上恒成立，证明如下：<br>&nbsp;&nbsp;&nbsp;&nbsp;①$x \in [1,+\infty)$时，<br>$$\ln_{}{(x+1)} \ge \ln_{}{2} = \frac{1}{2} \ln_{}{4} &gt; \frac{1}{2} \ln_{}{e} = \frac{1}{2} &gt; \frac{1}{2} \sin x$$<br>&nbsp;&nbsp;&nbsp;&nbsp;②$x \in [0,1)$时，<br>$$\ln_{}{(x+1)} \ge \frac{x}{x+1} &gt; \frac{1}{2} x \ge \frac{1}{2} \sin x$$回到本题，我们有$$\frac{e^x + \ln_{}{(x+1)} - 1}{f(x)} = \frac{e^x + \ln_{}{(x+1)} - 1}{2e^x + \sin x - 2} &gt; \frac{e^x + \frac{1}{2}\sin x  - 1}{2e^x + \sin x - 2} = \frac{1}{2}$$故$a \le \frac{1}{2}$</p>
+<p>另一方面，若$a &gt; \frac{1}{2}$，有如下矛盾：<br>当$x &gt; max (\frac{4}{2a-1} ,4a)$时，<br>我们有$$(2a-1)e^x &gt; (2a-1)\cdot \frac{1}{2}x^2 &gt; 2x &gt; x+4a$$故$$e^x+x &lt; 2ae^x-4a$$从而$$\frac{e^x + \ln_{}{(x+1)} - 1}{2e^x + \sin x - 2} &lt; \frac{e^x + \ln_{}{(x+1)} - 1}{2e^x - 4} &lt; \frac{e^x + x}{2e^x - 4} &lt; \frac{2ae^x - 4a}{2e^x - 4} = a$$这与题意矛盾。</p>
+<p>综上所述，$a \in (-\infty,\frac{1}{2}]$</p>
 
     
 
