@@ -97,7 +97,7 @@ function(t) {
                         e.$set("aboutme", !1),
                         e.$set(n, !0),
 						name || (e.$set("search", ""))
-						name && name != 'none' && (e.$set("search", "#" + name)),
+						name && (e.$set("search", "#" + name)),
                         e.$set("isShow", !0),
                         e.$set("isCtnShow", !0),
                         s()
