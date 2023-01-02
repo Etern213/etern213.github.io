@@ -316,7 +316,7 @@ i {
 /* 506 830 1775 */
 @font-face {
 	font-family:FZAY;
-    src:url(https://fastly.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.1.7.ttf) format("truetype")  /* jsdelivr.bobosh.ml */
+    src:url(https://fastly.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.1.7.ttf) format("truetype") /* fastly.jsdelivr.net*/ /* jsdelivr.bobosh.ml */
 }
 @font-face {
 	font-family:Abella;
@@ -501,6 +501,12 @@ body,button,input,select,textarea {
 	font-weight:bold;
 	font-size:1.1rem;
 	line-height:1.75;
+}
+.pic-desc {
+	font-family:Microsoft YaHei;
+	font-size:x-small;
+	font-weight:normal;
+	color:grey;
 }
 body {
 	background:#eaeaea;
@@ -2083,9 +2089,9 @@ to {
 }
 .declare {
 	background-color:#ffffff;
-	margin-top:.5em;
+	margin-top:0.5em;
 	border-left:3.5px solid #00f7ff;
-	padding:.1em 1em
+	padding:0em 0.5em
 }
 .hover-reveal {
 	position:fixed;
