@@ -634,6 +634,7 @@ body {
 	font-size:12px;
 	margin-bottom:10px;
     font-family:Microsoft YaHei;
+	font-weight:normal;
 	margin-top:30px
 }
 .left-col #header .header-smart-menu a:after {
@@ -2390,6 +2391,7 @@ to {
 #footer {
 	font-size:13px;
 	font-family:Menlo,Monaco,Andale Mono,lucida console,Courier New,monospace;
+	font-weight:normal;
 	text-shadow:0 1px #fff;
 	position:absolute;
 	bottom:30px;
