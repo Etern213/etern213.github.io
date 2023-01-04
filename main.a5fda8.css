@@ -316,7 +316,8 @@ i {
 /* 506 830 1775 */
 @font-face {
 	font-family:FZAY;
-    src:url(https://fastly.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.1.7.ttf) format("truetype") /* fastly.jsdelivr.net*/ /* jsdelivr.bobosh.ml */
+    src:url(https://gcore.jsdelivr.net/gh/Etern213/etern213.github.io/fonts/FZAY1.1.7.ttf) format("truetype")
+	/* cdn.jsdelivr.net */ /* fastly.jsdelivr.net */ /* gcore.jsdelivr.net */ /* testingcf.jsdelivr.net */
 }
 @font-face {
 	font-family:Abella;
